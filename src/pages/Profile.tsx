@@ -16,14 +16,14 @@ const Profile = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="container mx-auto px-4 py-16">
+        <main className="container mx-auto px-4 py-8 md:py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <User className="w-24 h-24 mx-auto mb-6 text-muted-foreground" />
-            <h1 className="text-3xl font-bold mb-4">Sign in to view profile</h1>
-            <p className="text-muted-foreground mb-8">
+            <User className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 text-muted-foreground" />
+            <h1 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Sign in to view profile</h1>
+            <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
               Please sign in to access your profile.
             </p>
-            <Button onClick={() => navigate("/auth")}>Sign In</Button>
+            <Button onClick={() => navigate("/auth")} className="w-full sm:w-auto">Sign In</Button>
           </div>
         </main>
         <Footer />
@@ -34,50 +34,53 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8">My Profile</h1>
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">My Profile</h1>
         
         <div className="max-w-2xl">
           <Card>
             <CardHeader>
-              <CardTitle>Account Information</CardTitle>
+              <CardTitle className="text-lg md:text-xl">Account Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-3 md:space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-sm md:text-base">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   value={user.email || ""}
                   disabled
+                  className="text-sm md:text-base"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
+                <Label htmlFor="name" className="text-sm md:text-base">Full Name</Label>
                 <Input
                   id="name"
                   type="text"
                   placeholder="Enter your full name"
+                  className="text-sm md:text-base"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone" className="text-sm md:text-base">Phone Number</Label>
                 <Input
                   id="phone"
                   type="tel"
                   placeholder="Enter your phone number"
+                  className="text-sm md:text-base"
                 />
               </div>
-              <Button>Update Profile</Button>
+              <Button className="w-full sm:w-auto touch-manipulation">Update Profile</Button>
             </CardContent>
           </Card>
 
-          <Card className="mt-6">
+          <Card className="mt-4 md:mt-6">
             <CardHeader>
-              <CardTitle>Security</CardTitle>
+              <CardTitle className="text-lg md:text-xl">Security</CardTitle>
             </CardHeader>
             <CardContent>
-              <Button variant="outline">Change Password</Button>
+              <Button variant="outline" className="w-full sm:w-auto touch-manipulation">Change Password</Button>
             </CardContent>
           </Card>
         </div>

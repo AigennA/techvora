@@ -6,13 +6,13 @@ const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-card border-t border-border mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-card border-t border-border mt-12 md:mt-20">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">{t("techStore")}</h3>
-            <p className="text-sm text-muted-foreground">
+          <div className="space-y-3 md:space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-primary">{t("techStore")}</h3>
+            <p className="text-xs md:text-sm text-muted-foreground">
               {t("aboutDescription")}
             </p>
             <div className="flex gap-4">

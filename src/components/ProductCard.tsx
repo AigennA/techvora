@@ -24,7 +24,7 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
 
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 border-border bg-card">
-      <div className="relative overflow-hidden aspect-square bg-secondary">
+      <div className="relative overflow-hidden aspect-square bg-secondary touch-manipulation">
         {imageLoading && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center bg-muted animate-pulse">
             <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
@@ -32,8 +32,8 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
         )}
         {imageError ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted text-muted-foreground">
-            <ImageOff className="w-16 h-16 mb-2" />
-            <p className="text-sm">Image unavailable</p>
+            <ImageOff className="w-12 h-12 md:w-16 md:h-16 mb-2" />
+            <p className="text-xs md:text-sm">Image unavailable</p>
           </div>
         ) : (
           <img 
@@ -51,49 +51,50 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
           />
         )}
         {!inStock && (
-          <Badge className="absolute top-3 right-3 bg-destructive">
+          <Badge className="absolute top-2 right-2 md:top-3 md:right-3 bg-destructive text-xs">
             {t("outOfStock")}
           </Badge>
         )}
         {inStock && (
-          <Badge className="absolute top-3 right-3 bg-accent">
+          <Badge className="absolute top-2 right-2 md:top-3 md:right-3 bg-accent text-xs">
             {t("inStock")}
           </Badge>
         )}
       </div>
       
-      <CardContent className="p-4 space-y-2">
+      <CardContent className="p-3 md:p-4 space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
             {category}
           </span>
           <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 fill-accent text-accent" />
-            <span className="text-sm font-medium">{rating}</span>
+            <Star className="w-3 h-3 md:w-4 md:h-4 fill-accent text-accent" />
+            <span className="text-xs md:text-sm font-medium">{rating}</span>
           </div>
         </div>
         
-        <h3 className="font-semibold text-foreground line-clamp-2 min-h-[3rem]">
+        <h3 className="font-semibold text-sm md:text-base text-foreground line-clamp-2 min-h-[2.5rem] md:min-h-[3rem]">
           {name}
         </h3>
         
-        <p className="text-2xl font-bold text-primary">
+        <p className="text-xl md:text-2xl font-bold text-primary">
           ${price.toFixed(2)}
         </p>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-3 md:p-4 pt-0">
         <Button 
-          className="w-full gap-2" 
+          className="w-full gap-2 touch-manipulation text-sm md:text-base" 
           disabled={!inStock}
           variant={inStock ? "default" : "secondary"}
+          size="sm"
           onClick={() => {
             if (inStock) {
               addToCart({ id, name, price, image });
             }
           }}
         >
-          <ShoppingCart className="w-4 h-4" />
+          <ShoppingCart className="w-3 h-3 md:w-4 md:h-4" />
           {inStock ? t("addToCart") : t("notifyMe")}
         </Button>
       </CardFooter>

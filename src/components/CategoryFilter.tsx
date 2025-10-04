@@ -19,9 +19,9 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterPr
   ];
 
   return (
-    <div className="py-8">
+    <div className="py-6 md:py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
           {categories.map((category) => {
             const Icon = category.icon;
             const isSelected = selectedCategory === category.id;
@@ -31,10 +31,12 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterPr
                 key={category.id}
                 variant={isSelected ? "default" : "outline"}
                 onClick={() => onCategoryChange(category.id)}
-                className="gap-2"
+                className="gap-2 text-xs md:text-sm"
+                size="sm"
               >
-                {Icon && <Icon className="w-4 h-4" />}
-                {category.name}
+                {Icon && <Icon className="w-3 h-3 md:w-4 md:h-4" />}
+                <span className="hidden sm:inline">{category.name}</span>
+                <span className="sm:hidden">{category.name.split(' ')[0]}</span>
               </Button>
             );
           })}

@@ -26,17 +26,17 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <Link to="/">
-              <h1 className="text-2xl font-bold text-primary cursor-pointer">
+              <h1 className="text-xl md:text-2xl font-bold text-primary cursor-pointer">
                 {t("techStore")}
               </h1>
             </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-6">
               <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 {t("phoneAccessories")}
               </Link>
@@ -53,19 +53,19 @@ const Navbar = () => {
           </div>
 
           {/* Search & Actions */}
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center relative">
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="hidden lg:flex items-center relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input 
                 placeholder={t("searchProducts")}
-                className="pl-10 w-64 bg-background"
+                className="pl-10 w-48 xl:w-64 bg-background"
               />
             </div>
 
-            {/* Language Switcher */}
+            {/* Language Switcher - Hidden on smallest screens */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="hidden sm:flex">
                   <Languages className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -91,7 +91,7 @@ const Navbar = () => {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="hidden sm:flex">
                     <User className="w-5 h-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button onClick={() => navigate("/auth")}>
+              <Button onClick={() => navigate("/auth")} size="sm" className="hidden sm:flex">
                 {t("signIn")}
               </Button>
             )}
@@ -120,7 +120,7 @@ const Navbar = () => {
             <Button 
               variant="ghost" 
               size="icon"
-              className="md:hidden"
+              className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <Menu className="w-5 h-5" />
@@ -130,22 +130,67 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               <Input 
                 placeholder={t("searchProducts")}
                 className="bg-background"
               />
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              
+              {/* Mobile Language Selector */}
+              <div className="flex items-center gap-2 sm:hidden">
+                <Button
+                  variant={language === "en" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("en")}
+                  className="flex-1"
+                >
+                  English
+                </Button>
+                <Button
+                  variant={language === "sv" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("sv")}
+                  className="flex-1"
+                >
+                  Svenska
+                </Button>
+              </div>
+
+              {/* Mobile Auth Button */}
+              {!user && (
+                <Button onClick={() => navigate("/auth")} className="sm:hidden w-full">
+                  {t("signIn")}
+                </Button>
+              )}
+
+              {user && (
+                <div className="sm:hidden space-y-2">
+                  <Button variant="outline" onClick={() => navigate("/orders")} className="w-full justify-start">
+                    {t("orders")}
+                  </Button>
+                  <Button variant="outline" onClick={() => navigate("/profile")} className="w-full justify-start">
+                    {t("profile")}
+                  </Button>
+                  <Button variant="outline" onClick={signOut} className="w-full justify-start">
+                    <LogOut className="w-4 h-4 mr-2" />
+                    {t("signOut")}
+                  </Button>
+                </div>
+              )}
+
+              <div className="h-px bg-border" />
+
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
                 {t("phoneAccessories")}
               </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
                 {t("audio")}
               </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
                 {t("charging")}
               </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
                 {t("smartDevices")}
               </Link>
             </div>
