@@ -1,11 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, Shield, Headphones } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import heroImage from "@/assets/hero-tech.jpg";
 import AnimatedCounter from "./AnimatedCounter";
+import { products } from "@/data/products";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const heroProducts = products.slice(0, 6);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroProducts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [heroProducts.length]);
   
   const scrollToProducts = () => {
     const productsSection = document.querySelector('#products');
@@ -62,14 +73,58 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Dynamic Product Images */}
           <div className="relative order-first md:order-last animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            {/* Background gradient blobs */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-2xl md:rounded-3xl transform rotate-3 animate-pulse"></div>
-            <img 
-              src={heroImage}
-              alt="Premium tech accessories"
-              className="relative rounded-xl md:rounded-2xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-all duration-500 hover:shadow-[var(--shadow-hover)]"
-            />
+            <div className="absolute -inset-4 bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl blur-2xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            
+            {/* Main product showcase */}
+            <div className="relative grid grid-cols-2 gap-3 md:gap-4 p-4 md:p-6 bg-gradient-to-br from-background/80 to-background/60 backdrop-blur-sm rounded-xl md:rounded-2xl shadow-2xl">
+              {heroProducts.map((product, index) => (
+                <div
+                  key={product.id}
+                  className={`relative overflow-hidden rounded-lg transition-all duration-700 ${
+                    index === currentImageIndex
+                      ? 'col-span-2 row-span-2 scale-100 opacity-100 z-10'
+                      : 'scale-95 opacity-60 hover:opacity-80 hover:scale-100'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent z-10"></div>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                  {index === currentImageIndex && (
+                    <div className="absolute bottom-3 left-3 right-3 z-20 animate-fade-in">
+                      <p className="text-white font-semibold text-sm md:text-base drop-shadow-lg">
+                        {product.name}
+                      </p>
+                      <p className="text-white/90 text-xs md:text-sm drop-shadow-lg">
+                        ${product.price}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Feature badges */}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-3 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <div className="bg-primary text-primary-foreground px-3 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg flex items-center gap-1 hover-scale">
+                <Zap className="w-3 h-3 md:w-4 md:h-4" />
+                Fast Shipping
+              </div>
+              <div className="bg-accent text-accent-foreground px-3 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg flex items-center gap-1 hover-scale">
+                <Shield className="w-3 h-3 md:w-4 md:h-4" />
+                2Y Warranty
+              </div>
+              <div className="bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-xs md:text-sm font-semibold shadow-lg flex items-center gap-1 hover-scale">
+                <Headphones className="w-3 h-3 md:w-4 md:h-4" />
+                24/7 Support
+              </div>
+            </div>
           </div>
         </div>
       </div>
