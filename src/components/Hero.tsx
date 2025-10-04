@@ -33,39 +33,8 @@ const Hero = () => {
           {/* Content with Floating Cards */}
           <div className="space-y-4 md:space-y-6 text-center md:text-left relative">
             {/* Decorative gradient blobs */}
-            <div className="absolute -left-20 top-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse hidden lg:block"></div>
-            <div className="absolute -left-10 bottom-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-pulse hidden lg:block" style={{ animationDelay: '1s' }}></div>
-            
-            {/* Floating feature cards grid */}
-            <div className="absolute -left-4 top-10 opacity-90 animate-fade-in hover-scale hidden lg:block" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-gradient-to-br from-primary/15 to-primary/5 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-primary/30 w-40">
-                <div className="bg-primary/20 p-2 rounded-lg w-fit mb-3">
-                  <Zap className="w-7 h-7 text-primary" />
-                </div>
-                <p className="text-sm font-bold text-foreground">Lightning Fast</p>
-                <p className="text-xs text-muted-foreground mt-1">2-day shipping</p>
-              </div>
-            </div>
-            
-            <div className="absolute -left-8 top-52 opacity-90 animate-fade-in hover-scale hidden lg:block" style={{ animationDelay: '0.7s' }}>
-              <div className="bg-gradient-to-br from-accent/15 to-accent/5 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-accent/30 w-40">
-                <div className="bg-accent/20 p-2 rounded-lg w-fit mb-3">
-                  <Shield className="w-7 h-7 text-accent" />
-                </div>
-                <p className="text-sm font-bold text-foreground">Secure Pay</p>
-                <p className="text-xs text-muted-foreground mt-1">SSL encrypted</p>
-              </div>
-            </div>
-
-            <div className="absolute right-8 top-32 opacity-90 animate-fade-in hover-scale hidden lg:block" style={{ animationDelay: '0.8s' }}>
-              <div className="bg-gradient-to-br from-secondary/15 to-secondary/5 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-secondary/30 w-40">
-                <div className="bg-secondary/20 p-2 rounded-lg w-fit mb-3">
-                  <Headphones className="w-7 h-7 text-secondary-foreground" />
-                </div>
-                <p className="text-sm font-bold text-foreground">24/7 Support</p>
-                <p className="text-xs text-muted-foreground mt-1">Always here</p>
-              </div>
-            </div>
+            <div className="absolute -left-20 top-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse hidden xl:block"></div>
+            <div className="absolute -left-10 bottom-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-pulse hidden xl:block" style={{ animationDelay: '1s' }}></div>
 
             <div className="inline-block animate-fade-in relative z-10">
               <span className="px-4 py-2 text-xs font-semibold text-primary bg-primary/10 rounded-full animate-pulse border border-primary/20">
