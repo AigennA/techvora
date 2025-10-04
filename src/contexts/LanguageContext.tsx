@@ -1,10 +1,11 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "en" | "sv";
+type Language = "en" | "sv" | "zh";
 
 interface Translations {
   en: Record<string, string>;
   sv: Record<string, string>;
+  zh: Record<string, string>;
 }
 
 const translations: Translations = {
@@ -101,6 +102,53 @@ const translations: Translations = {
     returns: "Returer",
     faq: "FAQ",
     allRightsReserved: "Alla rättigheter förbehållna.",
+  },
+  zh: {
+    // Navbar
+    techStore: "科技商店",
+    phoneAccessories: "手机配件",
+    audio: "音频",
+    charging: "充电",
+    smartDevices: "智能设备",
+    searchProducts: "搜索产品...",
+    signIn: "登录",
+    myAccount: "我的账户",
+    orders: "订单",
+    profile: "个人资料",
+    signOut: "退出",
+    
+    // Hero
+    newArrivals: "新品上市",
+    heroTitle: "为您的生活方式提供优质科技配件",
+    heroDescription: "探索我们精选的高品质手机配件、音频设备和智能产品系列。通过专为现代生活设计的产品提升您的科技体验。",
+    shopNow: "立即购物",
+    browseCategories: "浏览分类",
+    products: "产品",
+    happyCustomers: "满意客户",
+    rating: "评分",
+    
+    // Products
+    featuredProducts: "精选产品",
+    featuredDescription: "浏览我们精心挑选的优质科技配件系列",
+    addToCart: "加入购物车",
+    notifyMe: "通知我",
+    inStock: "有货",
+    outOfStock: "缺货",
+    
+    // Categories
+    all: "全部产品",
+    accessories: "手机配件",
+    
+    // Footer
+    aboutUs: "关于我们",
+    aboutDescription: "您值得信赖的优质科技配件和智能设备目的地。",
+    quickLinks: "快速链接",
+    customerService: "客户服务",
+    contact: "联系",
+    shipping: "运输",
+    returns: "退货",
+    faq: "常见问题",
+    allRightsReserved: "保留所有权利。",
   },
 };
 

@@ -103,7 +103,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <Button className="w-full touch-manipulation" size="lg">
+                <Button className="w-full touch-manipulation" size="lg" onClick={() => navigate("/checkout")}>
                   Proceed to Checkout
                 </Button>
                 <Button

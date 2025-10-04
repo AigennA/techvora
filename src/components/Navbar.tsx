@@ -1,4 +1,4 @@
-import { ShoppingCart, Search, Menu, User, LogOut, Languages } from "lucide-react";
+import { ShoppingCart, Search, Menu, User, LogOut, Languages, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -76,6 +76,9 @@ const Navbar = () => {
                 <DropdownMenuItem onClick={() => setLanguage("sv")}>
                   Svenska {language === "sv" && "✓"}
                 </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage("zh")}>
+                  中文 {language === "zh" && "✓"}
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             
@@ -98,6 +101,10 @@ const Navbar = () => {
                 <DropdownMenuContent align="end" className="bg-card z-50">
                   <DropdownMenuLabel>{t("myAccount")}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => navigate("/favorites")}>
+                    <Heart className="w-4 h-4 mr-2" />
+                    Favorites
+                  </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/orders")}>
                     {t("orders")}
                   </DropdownMenuItem>
@@ -138,22 +145,27 @@ const Navbar = () => {
               />
               
               {/* Mobile Language Selector */}
-              <div className="flex items-center gap-2 sm:hidden">
+              <div className="grid grid-cols-3 gap-2 sm:hidden">
                 <Button
                   variant={language === "en" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setLanguage("en")}
-                  className="flex-1"
                 >
-                  English
+                  EN
                 </Button>
                 <Button
                   variant={language === "sv" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setLanguage("sv")}
-                  className="flex-1"
                 >
-                  Svenska
+                  SV
+                </Button>
+                <Button
+                  variant={language === "zh" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("zh")}
+                >
+                  中文
                 </Button>
               </div>
 
@@ -166,6 +178,10 @@ const Navbar = () => {
 
               {user && (
                 <div className="sm:hidden space-y-2">
+                  <Button variant="outline" onClick={() => navigate("/favorites")} className="w-full justify-start">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Favorites
+                  </Button>
                   <Button variant="outline" onClick={() => navigate("/orders")} className="w-full justify-start">
                     {t("orders")}
                   </Button>

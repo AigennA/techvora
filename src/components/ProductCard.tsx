@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Star, ImageOff } from "lucide-react";
+import { ShoppingCart, Star, ImageOff, Heart } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ProductCardProps {
@@ -20,11 +21,25 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const { addToCart } = useCart();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const { t } = useLanguage();
+  
+  const favorite = isFavorite(id);
 
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 border-border bg-card">
       <div className="relative overflow-hidden aspect-square bg-secondary touch-manipulation">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute top-2 right-2 z-10 bg-white/90 hover:bg-white"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleFavorite({ id, name, price, image });
+          }}
+        >
+          <Heart className={`w-4 h-4 md:w-5 md:h-5 ${favorite ? 'fill-red-500 text-red-500' : ''}`} />
+        </Button>
         {imageLoading && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center bg-muted animate-pulse">
             <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
