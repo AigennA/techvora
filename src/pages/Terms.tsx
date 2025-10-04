@@ -12,7 +12,7 @@ const Terms = () => {
         <div className="prose prose-slate max-w-3xl">
           <h2>Agreement to Terms</h2>
           <p>
-            By accessing and using TechStore's website and services, you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access our services.
+            By accessing and using TechVora's website and services, you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access our services.
           </p>
 
           <h2>Use of Our Service</h2>
@@ -60,17 +60,17 @@ const Terms = () => {
 
           <h2>Intellectual Property</h2>
           <p>
-            All content on our website, including text, graphics, logos, images, and software, is the property of TechStore or its content suppliers and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
+            All content on our website, including text, graphics, logos, images, and software, is the property of TechVora or its content suppliers and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
           </p>
 
           <h2>Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by law, TechStore shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+            To the fullest extent permitted by law, TechVora shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
           </p>
 
           <h2>Indemnification</h2>
           <p>
-            You agree to indemnify and hold harmless TechStore and its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from your use of our services or violation of these Terms.
+            You agree to indemnify and hold harmless TechVora and its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from your use of our services or violation of these Terms.
           </p>
 
           <h2>Governing Law</h2>
@@ -88,7 +88,7 @@ const Terms = () => {
             For questions about these Terms, please contact us at:
           </p>
           <p>
-            Email: legal@techstore.com<br />
+            Email: legal@techvora.com<br />
             Phone: +1 (555) 123-4567<br />
             Address: 123 Tech Street, San Francisco, CA 94102
           </p>

@@ -14,7 +14,7 @@ interface Translations {
 const translations: Translations = {
   en: {
     // Navbar
-    techStore: "TechStore",
+    techStore: "TechVora",
     phoneAccessories: "Phone Accessories",
     audio: "Audio",
     charging: "Charging",
@@ -136,7 +136,7 @@ const translations: Translations = {
   },
   sv: {
     // Navbar
-    techStore: "TechStore",
+    techStore: "TechVora",
     phoneAccessories: "Telefontillbehör",
     audio: "Ljud",
     charging: "Laddning",
@@ -380,7 +380,7 @@ const translations: Translations = {
   },
   pl: {
     // Navbar
-    techStore: "TechStore",
+    techStore: "TechVora",
     phoneAccessories: "Akcesoria do Telefonu",
     audio: "Audio",
     charging: "Ładowanie",
@@ -502,7 +502,7 @@ const translations: Translations = {
   },
   tr: {
     // Navbar
-    techStore: "TechStore",
+    techStore: "TechVora",
     phoneAccessories: "Telefon Aksesuarları",
     audio: "Ses",
     charging: "Şarj",
@@ -624,7 +624,7 @@ const translations: Translations = {
   },
   es: {
     // Navbar
-    techStore: "TechStore",
+    techStore: "TechVora",
     phoneAccessories: "Accesorios para Teléfono",
     audio: "Audio",
     charging: "Carga",

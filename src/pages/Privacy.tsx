@@ -12,7 +12,7 @@ const Privacy = () => {
         <div className="prose prose-slate max-w-3xl">
           <h2>Introduction</h2>
           <p>
-            TechStore ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+            TechVora ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
           </p>
 
           <h2>Information We Collect</h2>
@@ -93,7 +93,7 @@ const Privacy = () => {
             If you have questions about this Privacy Policy, please contact us at:
           </p>
           <p>
-            Email: privacy@techstore.com<br />
+            Email: privacy@techvora.com<br />
             Phone: +1 (555) 123-4567<br />
             Address: 123 Tech Street, San Francisco, CA 94102
           </p>

@@ -4,7 +4,7 @@ const Logo = ({ className = "w-8 h-8" }: { className?: string }) => {
   return (
     <img 
       src={techStoreLogo} 
-      alt="TechStore Logo" 
+      alt="TechVora Logo" 
       className={className}
     />
   );
