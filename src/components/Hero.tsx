@@ -30,8 +30,23 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 py-12 md:py-20 lg:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+          {/* Content with Floating Cards */}
+          <div className="space-y-4 md:space-y-6 text-center md:text-left relative">
+            {/* Floating feature cards in background */}
+            <div className="absolute -left-4 top-10 opacity-80 animate-fade-in hover-scale hidden lg:block" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-primary/20 w-32">
+                <Zap className="w-6 h-6 text-primary mb-2" />
+                <p className="text-xs font-semibold">Lightning Fast</p>
+              </div>
+            </div>
+            
+            <div className="absolute -left-8 bottom-20 opacity-80 animate-fade-in hover-scale hidden lg:block" style={{ animationDelay: '0.8s' }}>
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-accent/20 w-32">
+                <Shield className="w-6 h-6 text-accent mb-2" />
+                <p className="text-xs font-semibold">Secure</p>
+              </div>
+            </div>
+
             <div className="inline-block animate-fade-in">
               <span className="px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full animate-pulse">
                 {t("newArrivals")}
@@ -42,12 +57,12 @@ const Hero = () => {
               {t("heroTitle")}
             </h1>
             
-            <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto md:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto md:mx-0 animate-fade-in relative z-10" style={{ animationDelay: '0.2s' }}>
               {t("heroDescription")}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" className="group w-full sm:w-auto hover-scale" onClick={scrollToProducts}>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 animate-fade-in relative z-10" style={{ animationDelay: '0.3s' }}>
+              <Button size="lg" className="group w-full sm:w-auto hover-scale shadow-lg" onClick={scrollToProducts}>
                 {t("shopNow")}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
