@@ -127,36 +127,74 @@ const Footer = () => {
           {/* Payment Methods */}
           <div className="flex flex-col items-center gap-3">
             <p className="text-xs text-muted-foreground font-medium">We Accept</p>
-            <div className="flex flex-wrap justify-center gap-2 items-center">
-              <span className="text-xs font-medium">Visa</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Mastercard</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Klarna</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Qliro</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Stripe</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Apple Pay</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Google Pay</span>
+            <div className="flex flex-wrap justify-center gap-3 items-center">
+              {/* Visa */}
+              <div className="h-8 px-3 bg-white rounded border border-gray-200 flex items-center">
+                <span className="text-[#1A1F71] font-bold text-sm">VISA</span>
+              </div>
+              
+              {/* Mastercard */}
+              <div className="h-8 px-3 bg-white rounded border border-gray-200 flex items-center">
+                <span className="font-bold text-sm">
+                  <span className="text-[#EB001B]">Master</span><span className="text-[#FF5F00]">card</span>
+                </span>
+              </div>
+              
+              {/* Klarna */}
+              <div className="h-8 px-3 bg-[#FFB3C7] rounded flex items-center">
+                <span className="text-black font-bold text-sm">klarna</span>
+              </div>
+              
+              {/* Qliro */}
+              <div className="h-8 px-3 bg-white rounded border border-gray-200 flex items-center">
+                <span className="text-[#002E5D] font-bold text-sm">Qliro</span>
+              </div>
+              
+              {/* Stripe */}
+              <div className="h-8 px-3 bg-[#635BFF] rounded flex items-center">
+                <span className="text-white font-bold text-sm">Stripe</span>
+              </div>
+              
+              {/* Apple Pay */}
+              <div className="h-8 px-3 bg-black rounded flex items-center">
+                <span className="text-white font-semibold text-sm"> Pay</span>
+              </div>
+              
+              {/* Google Pay */}
+              <div className="h-8 px-3 bg-white rounded border border-gray-200 flex items-center">
+                <span className="text-sm">G <span className="text-[#4285F4] font-semibold">Pay</span></span>
+              </div>
             </div>
           </div>
 
           {/* Shipping Partners */}
           <div className="flex flex-col items-center gap-3 pb-4">
             <p className="text-xs text-muted-foreground font-medium">Shipping Partners</p>
-            <div className="flex flex-wrap justify-center gap-2 items-center">
-              <span className="text-xs font-medium">PostNord</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Instabox</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">DHL</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">Bring</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-xs font-medium">EarlyBird</span>
+            <div className="flex flex-wrap justify-center gap-3 items-center">
+              {/* PostNord */}
+              <div className="h-8 px-3 bg-[#FFCC00] rounded flex items-center">
+                <span className="text-[#004B87] font-bold text-sm">PostNord</span>
+              </div>
+              
+              {/* Instabox */}
+              <div className="h-8 px-3 bg-[#00D4AA] rounded flex items-center">
+                <span className="text-white font-bold text-sm">Instabox</span>
+              </div>
+              
+              {/* DHL */}
+              <div className="h-8 px-3 bg-[#FFCC00] rounded flex items-center">
+                <span className="text-[#D40511] font-bold text-sm">DHL</span>
+              </div>
+              
+              {/* Bring */}
+              <div className="h-8 px-3 bg-[#00A5DF] rounded flex items-center">
+                <span className="text-white font-bold text-sm">Bring</span>
+              </div>
+              
+              {/* EarlyBird */}
+              <div className="h-8 px-3 bg-white rounded border border-gray-200 flex items-center">
+                <span className="text-[#FF6B35] font-bold text-sm">EarlyBird</span>
+              </div>
             </div>
           </div>
 
