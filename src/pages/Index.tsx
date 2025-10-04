@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CategoryFilter from "@/components/CategoryFilter";
 import ProductGrid from "@/components/ProductGrid";
+import TrustpilotReviews from "@/components/TrustpilotReviews";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -32,6 +33,7 @@ const Index = () => {
           searchQuery={searchQuery}
         />
       </div>
+      <TrustpilotReviews />
       <Footer />
     </div>
   );
