@@ -36,16 +36,27 @@ const ProductGrid = ({ selectedCategory, searchQuery = "" }: ProductGridProps) =
   
   console.log("Filtered products count:", filteredProducts.length);
 
+  const isAll = selectedCategory === "all";
+  const titleMap: Record<string, string> = {
+    accessories: t("phoneAccessories"),
+    audio: t("audio"),
+    charging: t("charging"),
+    "smart-devices": t("smartDevices"),
+  };
+  const heading = isAll ? t("featuredProducts") : (titleMap[selectedCategory] || t("featuredProducts"));
+
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">
-            {t("featuredProducts")}
+            {heading}
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            {t("featuredDescription")}
-          </p>
+          {isAll && (
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+              {t("featuredDescription")}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">

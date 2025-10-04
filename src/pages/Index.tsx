@@ -50,7 +50,7 @@ const Index = () => {
       <Navbar onSearch={handleSearch} onCategoryChange={handleCategoryChange} />
       <AnnouncementBanner />
       <Hero />
-      <FeaturedProducts />
+      {selectedCategory === "all" && !searchQuery && <FeaturedProducts /> }
       <CategoryFilter 
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
