@@ -34,7 +34,7 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-2 right-2 z-10 bg-white/90 hover:bg-white"
+          className="absolute top-2 right-2 z-10 bg-background/90 hover:bg-background"
           onClick={(e) => {
             e.stopPropagation();
             toggleFavorite({ id, name, price, image });
@@ -67,16 +67,11 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
             }`}
           />
         )}
-        {!inStock && (
-          <Badge className="absolute top-2 right-2 md:top-3 md:right-3 bg-destructive text-xs">
-            {t("outOfStock")}
-          </Badge>
-        )}
-        {inStock && (
-          <Badge className="absolute top-2 right-2 md:top-3 md:right-3 bg-accent text-xs">
-            {t("inStock")}
-          </Badge>
-        )}
+        <Badge className={`absolute top-2 left-2 md:top-3 md:left-3 text-xs md:text-sm font-semibold ${
+          inStock ? 'bg-accent text-accent-foreground' : 'bg-destructive text-destructive-foreground'
+        }`}>
+          {inStock ? t("inStock") : t("outOfStock")}
+        </Badge>
       </div>
       
       <CardContent className="p-3 md:p-4 space-y-2">

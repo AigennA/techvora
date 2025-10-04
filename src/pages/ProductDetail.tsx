@@ -58,16 +58,11 @@ const ProductDetail = () => {
                 alt={t(`product_${product.id}_name`)}
                 className="w-full h-full object-cover"
               />
-              {!product.inStock && (
-                <Badge className="absolute top-4 right-4 bg-destructive">
-                  {t("outOfStock")}
-                </Badge>
-              )}
-              {product.inStock && (
-                <Badge className="absolute top-4 right-4 bg-accent">
-                  {t("stockAvailable")}
-                </Badge>
-              )}
+              <Badge className={`absolute top-3 left-3 md:top-4 md:left-4 text-sm md:text-base font-semibold ${
+                product.inStock ? 'bg-accent text-accent-foreground' : 'bg-destructive text-destructive-foreground'
+              }`}>
+                {product.inStock ? t("stockAvailable") : t("outOfStock")}
+              </Badge>
             </div>
           </Card>
 
