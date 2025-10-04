@@ -50,45 +50,11 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-background via-primary/5 to-background backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/5">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
-          <div className="flex items-center gap-4 md:gap-8">
-            <Link to="/" className="flex items-center group">
-              <Logo className="transition-transform group-hover:scale-110" />
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-6">
-              <button 
-                onClick={() => handleCategoryClick("accessories")} 
-                className="text-sm font-semibold text-foreground hover:text-primary transition-all hover:scale-105 relative group"
-              >
-                {t("phoneAccessories")}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all group-hover:w-full"></span>
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("audio")} 
-                className="text-sm font-semibold text-foreground hover:text-primary transition-all hover:scale-105 relative group"
-              >
-                {t("audio")}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all group-hover:w-full"></span>
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("charging")} 
-                className="text-sm font-semibold text-foreground hover:text-primary transition-all hover:scale-105 relative group"
-              >
-                {t("charging")}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all group-hover:w-full"></span>
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("smart-devices")} 
-                className="text-sm font-semibold text-foreground hover:text-primary transition-all hover:scale-105 relative group"
-              >
-                {t("smartDevices")}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all group-hover:w-full"></span>
-              </button>
-            </div>
-          </div>
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* Large Logo */}
+          <Link to="/" className="flex items-center group">
+            <Logo className="transition-transform group-hover:scale-105 scale-125 md:scale-150" />
+          </Link>
 
           {/* Search & Actions */}
           <div className="flex items-center gap-2 md:gap-4">
@@ -263,32 +229,6 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
                 </div>
               )}
 
-              <div className="h-px bg-border" />
-
-              <button 
-                onClick={() => handleCategoryClick("accessories")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("phoneAccessories")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("audio")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("audio")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("charging")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("charging")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("smart-devices")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("smartDevices")}
-              </button>
             </div>
           </div>
         )}
