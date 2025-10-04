@@ -1,21 +1,26 @@
-import { Zap } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Logo = ({ className = "" }: { className?: string }) => {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`}>
       <div className="relative">
-        {/* Outer glow ring */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-lg blur-sm opacity-50 animate-pulse"></div>
+        {/* Animated glow */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary rounded-xl blur-md opacity-60 animate-pulse"></div>
         
-        {/* Main logo container */}
-        <div className="relative bg-gradient-to-br from-primary via-primary to-accent p-2 rounded-lg shadow-lg">
-          <Zap className="w-6 h-6 text-primary-foreground" fill="currentColor" />
+        {/* Main logo container with gradient border */}
+        <div className="relative bg-gradient-to-br from-primary via-accent to-primary p-[2px] rounded-xl">
+          <div className="bg-background p-2 rounded-xl">
+            <Sparkles className="w-6 h-6 text-primary" fill="currentColor" />
+          </div>
         </div>
       </div>
       
-      <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-        TechVora
-      </span>
+      <div className="flex flex-col">
+        <span className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+          NexaStore
+        </span>
+        <span className="text-[10px] font-medium text-muted-foreground tracking-widest">PREMIUM TECH</span>
+      </div>
     </div>
   );
 };
