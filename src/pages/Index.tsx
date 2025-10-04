@@ -24,13 +24,23 @@ const Index = () => {
     setSearchQuery(query);
   };
 
+  const handleCategoryChange = (category: string) => {
+    console.log("Category changed to:", category);
+    setSelectedCategory(category);
+    // Scroll to products section
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar onSearch={handleSearch} />
       <Hero />
       <CategoryFilter 
         selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
+        onCategoryChange={handleCategoryChange}
       />
       <div id="products">
         <ProductGrid 
