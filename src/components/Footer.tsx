@@ -142,7 +142,7 @@ const Footer = () => {
               
               {/* Klarna */}
               <div className="h-8 px-3 bg-[#FFB3C7] rounded flex items-center">
-                <span className="text-black font-bold text-sm">klarna</span>
+                <span className="text-black font-bold text-sm">Klarna</span>
               </div>
               
               {/* Qliro */}
