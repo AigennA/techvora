@@ -36,7 +36,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onSearch={handleSearch} />
+      <Navbar onSearch={handleSearch} onCategoryChange={handleCategoryChange} />
       <Hero />
       <CategoryFilter 
         selectedCategory={selectedCategory}

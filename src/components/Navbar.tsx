@@ -19,9 +19,10 @@ import {
 
 interface NavbarProps {
   onSearch?: (query: string) => void;
+  onCategoryChange?: (category: string) => void;
 }
 
-const Navbar = ({ onSearch }: NavbarProps = {}) => {
+const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
   const { totalItems } = useCart();
@@ -36,6 +37,14 @@ const Navbar = ({ onSearch }: NavbarProps = {}) => {
     } else {
       console.log("Navbar - onSearch callback is not defined");
     }
+  };
+
+  const handleCategoryClick = (category: string) => {
+    if (onCategoryChange) {
+      onCategoryChange(category);
+    }
+    navigate("/?category=" + category);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -53,18 +62,30 @@ const Navbar = ({ onSearch }: NavbarProps = {}) => {
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button 
+                onClick={() => handleCategoryClick("accessories")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
                 {t("phoneAccessories")}
-              </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("audio")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
                 {t("audio")}
-              </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("charging")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
                 {t("charging")}
-              </Link>
-              <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("smart-devices")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
                 {t("smartDevices")}
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -243,18 +264,30 @@ const Navbar = ({ onSearch }: NavbarProps = {}) => {
 
               <div className="h-px bg-border" />
 
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
+              <button 
+                onClick={() => handleCategoryClick("accessories")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
+              >
                 {t("phoneAccessories")}
-              </Link>
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("audio")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
+              >
                 {t("audio")}
-              </Link>
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("charging")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
+              >
                 {t("charging")}
-              </Link>
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2">
+              </button>
+              <button 
+                onClick={() => handleCategoryClick("smart-devices")} 
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
+              >
                 {t("smartDevices")}
-              </Link>
+              </button>
             </div>
           </div>
         )}
