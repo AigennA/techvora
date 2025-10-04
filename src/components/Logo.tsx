@@ -13,14 +13,9 @@ const Logo = ({ className = "" }: { className?: string }) => {
         </div>
       </div>
       
-      <div className="flex flex-col leading-none">
-        <span className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-          TechVora
-        </span>
-        <span className="text-[10px] text-muted-foreground font-medium tracking-wider">
-          TECH & BEYOND
-        </span>
-      </div>
+      <span className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+        TechVora
+      </span>
     </div>
   );
 };

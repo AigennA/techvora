@@ -53,11 +53,8 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <div className="flex items-center gap-4 md:gap-8">
-            <Link to="/" className="flex items-center gap-2 group">
-              <Logo className="w-8 h-8 md:w-10 md:h-10 transition-transform group-hover:scale-110" />
-              <h1 className="text-xl md:text-2xl font-bold font-poppins tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                {t("techStore")}
-              </h1>
+            <Link to="/" className="flex items-center group">
+              <Logo className="transition-transform group-hover:scale-110" />
             </Link>
             
             {/* Desktop Navigation */}
