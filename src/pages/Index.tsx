@@ -29,11 +29,20 @@ const Index = () => {
   const handleCategoryChange = (category: string) => {
     console.log("Category changed to:", category);
     setSelectedCategory(category);
-    // Scroll to products section
-    const productsSection = document.getElementById("products");
-    if (productsSection) {
-      productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    // Scroll to products section with offset for sticky navbar
+    setTimeout(() => {
+      const productsSection = document.getElementById("products");
+      if (productsSection) {
+        const navbarHeight = 100; // Account for sticky navbar
+        const elementPosition = productsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100);
   };
 
   return (
