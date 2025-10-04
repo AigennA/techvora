@@ -132,6 +132,14 @@ export default {
             backgroundPosition: "200% 0"
           }
         },
+        "scroll": {
+          "0%": {
+            transform: "translateX(0)"
+          },
+          "100%": {
+            transform: "translateX(-50%)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -139,6 +147,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
         "shimmer": "shimmer 2s linear infinite",
+        "scroll": "scroll 20s linear infinite",
       },
     },
   },

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Hero from "@/components/Hero";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import CategoryFilter from "@/components/CategoryFilter";
@@ -38,6 +39,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onSearch={handleSearch} onCategoryChange={handleCategoryChange} />
+      <AnnouncementBanner />
       <Hero />
       <FeaturedProducts />
       <CategoryFilter 
