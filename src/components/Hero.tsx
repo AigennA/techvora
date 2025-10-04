@@ -24,14 +24,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-6 md:py-8 lg:py-12">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-4 md:py-6 lg:py-8">
       {/* Simplified background element */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_60%)]"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           {/* Content */}
-          <div className="space-y-3 md:space-y-4 text-center md:text-left relative">
+          <div className="space-y-2 md:space-y-3 text-center md:text-left relative">
             {/* Decorative gradient blobs */}
             <div className="absolute -left-20 top-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse hidden xl:block"></div>
             <div className="absolute -left-10 bottom-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-pulse hidden xl:block" style={{ animationDelay: '1s' }}></div>

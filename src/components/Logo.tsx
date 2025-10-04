@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Zap } from "lucide-react";
 
 const Logo = ({ className = "" }: { className?: string }) => {
   return (
@@ -10,12 +10,12 @@ const Logo = ({ className = "" }: { className?: string }) => {
         {/* Main logo container with gradient border */}
         <div className="relative bg-gradient-to-br from-primary via-accent to-primary p-[2px] rounded-xl">
           <div className="bg-background p-2 rounded-xl">
-            <Sparkles className="w-6 h-6 text-primary" fill="currentColor" />
+            <Zap className="w-6 h-6 text-primary" fill="currentColor" />
           </div>
         </div>
       </div>
       
-      <span className="text-2xl md:text-3xl font-black tracking-tight bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+      <span className="text-2xl md:text-3xl font-black tracking-tight bg-gradient-to-r from-primary via-foreground to-accent bg-clip-text text-transparent">
         TechVora
       </span>
     </div>
