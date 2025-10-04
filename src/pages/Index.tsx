@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import FeaturedProducts from "@/components/FeaturedProducts";
 import CategoryFilter from "@/components/CategoryFilter";
 import ProductGrid from "@/components/ProductGrid";
 import TrustpilotReviews from "@/components/TrustpilotReviews";
@@ -38,6 +39,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onSearch={handleSearch} onCategoryChange={handleCategoryChange} />
       <Hero />
+      <FeaturedProducts />
       <CategoryFilter 
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
