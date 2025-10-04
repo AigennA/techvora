@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Star } from "lucide-react";
+import { ShoppingCart, Star, ImageOff } from "lucide-react";
 
 interface ProductCardProps {
   id: string;
@@ -14,14 +15,37 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ name, price, image, rating, category, inStock }: ProductCardProps) => {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
+
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 border-border bg-card">
       <div className="relative overflow-hidden aspect-square bg-secondary">
-        <img 
-          src={image} 
-          alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+        {imageLoading && !imageError && (
+          <div className="absolute inset-0 flex items-center justify-center bg-muted animate-pulse">
+            <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
+          </div>
+        )}
+        {imageError ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted text-muted-foreground">
+            <ImageOff className="w-16 h-16 mb-2" />
+            <p className="text-sm">Image unavailable</p>
+          </div>
+        ) : (
+          <img 
+            src={image} 
+            alt={name}
+            loading="lazy"
+            onLoad={() => setImageLoading(false)}
+            onError={() => {
+              setImageError(true);
+              setImageLoading(false);
+            }}
+            className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${
+              imageLoading ? 'opacity-0' : 'opacity-100'
+            }`}
+          />
+        )}
         {!inStock && (
           <Badge className="absolute top-3 right-3 bg-destructive">
             Out of Stock
