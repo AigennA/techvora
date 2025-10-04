@@ -29,11 +29,11 @@ const Index = () => {
   const handleCategoryChange = (category: string) => {
     console.log("Category changed to:", category);
     setSelectedCategory(category);
-    // Scroll to products section with offset for sticky navbar
-    setTimeout(() => {
+    // Scroll to products section with proper offset
+    requestAnimationFrame(() => {
       const productsSection = document.getElementById("products");
       if (productsSection) {
-        const navbarHeight = 100; // Account for sticky navbar
+        const navbarHeight = 120; // Account for sticky navbar and announcement
         const elementPosition = productsSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
         
@@ -42,7 +42,7 @@ const Index = () => {
           behavior: "smooth"
         });
       }
-    }, 100);
+    });
   };
 
   return (

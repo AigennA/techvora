@@ -43,7 +43,7 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
     if (onCategoryChange) {
       onCategoryChange(category);
     }
-    navigate("/?category=" + category);
+    navigate("/?category=" + category, { replace: true });
     setIsMenuOpen(false);
   };
 
