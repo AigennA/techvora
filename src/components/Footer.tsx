@@ -91,22 +91,22 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
+                  {t("privacyPolicy")}
                 </Link>
               </li>
               <li>
                 <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
-                  Terms & Conditions
+                  {t("termsConditions")}
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                  Cookie Policy
+                <Link to="/cookie-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("cookiePolicy")}
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                  GDPR Compliance
+                <Link to="/payment-methods" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("paymentMethods")}
                 </Link>
               </li>
             </ul>

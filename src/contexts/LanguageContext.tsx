@@ -82,6 +82,44 @@ const translations: Translations = {
     itemsLeft: "items left",
     inYourCart: "in your cart",
     description: "Description",
+    
+    // Cookie Policy
+    cookiePolicy: "Cookie Policy",
+    whatAreCookies: "What Are Cookies?",
+    cookiesDesc: "Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better shopping experience by remembering your preferences and understanding how you use our site.",
+    howWeUseCookies: "How We Use Cookies",
+    essentialCookies: "Essential Cookies",
+    essentialCookiesDesc: "These cookies are necessary for the website to function properly. They enable basic functions like page navigation, shopping cart, and secure checkout.",
+    analyticsCookies: "Analytics Cookies",
+    analyticsCookiesDesc: "We use analytics cookies to understand how visitors interact with our website. This helps us improve our services and user experience.",
+    marketingCookies: "Marketing Cookies",
+    marketingCookiesDesc: "These cookies track your browsing habits to show you relevant advertisements and measure the effectiveness of our marketing campaigns.",
+    managingCookies: "Managing Cookies",
+    managingCookiesDesc: "You can control and manage cookies through your browser settings. However, disabling certain cookies may affect your experience on our website.",
+    updates: "Updates to This Policy",
+    cookiePolicyUpdates: "We may update this Cookie Policy from time to time. Please check back regularly to stay informed about our use of cookies.",
+    
+    // Payment Methods
+    paymentMethods: "Payment Methods",
+    paymentMethodsIntro: "We offer secure and convenient payment options to make your shopping experience smooth and hassle-free.",
+    creditDebitCards: "Credit & Debit Cards",
+    creditDebitCardsDesc: "Pay securely with your favorite credit or debit card. We accept all major card providers for your convenience.",
+    digitalWallets: "Digital Wallets",
+    digitalWalletsDesc: "Quick and secure checkout using your preferred digital wallet. Perfect for fast, contactless payments.",
+    paypal: "PayPal",
+    paypalDesc: "Shop with confidence using PayPal. Benefit from buyer protection and easy refunds.",
+    bankTransfer: "Bank Transfer",
+    bankTransferDesc: "Direct bank transfer for large orders. Safe and reliable for high-value purchases.",
+    allMajorBanks: "All Major Banks Supported",
+    securePayments: "Secure Payments",
+    securePaymentsDesc: "Your payment information is protected with industry-leading security measures:",
+    sslEncryption: "256-bit SSL encryption for all transactions",
+    pciCompliance: "PCI DSS compliant payment processing",
+    fraudProtection: "Advanced fraud detection and prevention",
+    
+    // Footer
+    privacyPolicy: "Privacy Policy",
+    termsConditions: "Terms & Conditions",
   },
   sv: {
     // Navbar
@@ -156,6 +194,44 @@ const translations: Translations = {
     itemsLeft: "kvar",
     inYourCart: "i din varukorg",
     description: "Beskrivning",
+    
+    // Cookie Policy
+    cookiePolicy: "Cookie Policy",
+    whatAreCookies: "Vad är Cookies?",
+    cookiesDesc: "Cookies är små textfiler som placeras på din enhet när du besöker vår webbplats. De hjälper oss att ge dig en bättre shoppingupplevelse genom att komma ihåg dina preferenser och förstå hur du använder vår webbplats.",
+    howWeUseCookies: "Hur Vi Använder Cookies",
+    essentialCookies: "Nödvändiga Cookies",
+    essentialCookiesDesc: "Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt. De möjliggör grundläggande funktioner som sidnavigering, varukorg och säker utcheckning.",
+    analyticsCookies: "Analytiska Cookies",
+    analyticsCookiesDesc: "Vi använder analytiska cookies för att förstå hur besökare interagerar med vår webbplats. Detta hjälper oss att förbättra våra tjänster och användarupplevelse.",
+    marketingCookies: "Marknadsföringscookies",
+    marketingCookiesDesc: "Dessa cookies spårar dina surfvanor för att visa dig relevanta annonser och mäta effektiviteten av våra marknadsföringskampanjer.",
+    managingCookies: "Hantera Cookies",
+    managingCookiesDesc: "Du kan kontrollera och hantera cookies genom dina webbläsarinställningar. Att inaktivera vissa cookies kan dock påverka din upplevelse på vår webbplats.",
+    updates: "Uppdateringar av Denna Policy",
+    cookiePolicyUpdates: "Vi kan uppdatera denna Cookie Policy från tid till annan. Vänligen kontrollera regelbundet för att hålla dig informerad om vår användning av cookies.",
+    
+    // Payment Methods
+    paymentMethods: "Betalningsmetoder",
+    paymentMethodsIntro: "Vi erbjuder säkra och bekväma betalningsalternativ för att göra din shoppingupplevelse smidig och problemfri.",
+    creditDebitCards: "Kredit- & Betalkort",
+    creditDebitCardsDesc: "Betala säkert med ditt favoritkort. Vi accepterar alla stora kortleverantörer för din bekvämlighet.",
+    digitalWallets: "Digitala Plånböcker",
+    digitalWalletsDesc: "Snabb och säker utcheckning med din föredragna digitala plånbok. Perfekt för snabba, kontaktlösa betalningar.",
+    paypal: "PayPal",
+    paypalDesc: "Handla med förtroende med PayPal. Dra nytta av köparskydd och enkla återbetalningar.",
+    bankTransfer: "Banköverföring",
+    bankTransferDesc: "Direkt banköverföring för stora beställningar. Säkert och pålitligt för högvärdiga köp.",
+    allMajorBanks: "Alla Stora Banker Stöds",
+    securePayments: "Säkra Betalningar",
+    securePaymentsDesc: "Din betalningsinformation skyddas med branschledande säkerhetsåtgärder:",
+    sslEncryption: "256-bitars SSL-kryptering för alla transaktioner",
+    pciCompliance: "PCI DSS-kompatibel betalningshantering",
+    fraudProtection: "Avancerad upptäckt och förebyggande av bedrägerier",
+    
+    // Footer
+    privacyPolicy: "Integritetspolicy",
+    termsConditions: "Villkor & Regler",
   },
   zh: {
     // Navbar
@@ -230,6 +306,44 @@ const translations: Translations = {
     itemsLeft: "件库存",
     inYourCart: "在购物车",
     description: "描述",
+    
+    // Cookie Policy
+    cookiePolicy: "Cookie 政策",
+    whatAreCookies: "什么是 Cookies？",
+    cookiesDesc: "Cookies 是您访问我们网站时放置在您设备上的小文本文件。它们通过记住您的偏好和了解您如何使用我们的网站来帮助我们为您提供更好的购物体验。",
+    howWeUseCookies: "我们如何使用 Cookies",
+    essentialCookies: "必要的 Cookies",
+    essentialCookiesDesc: "这些 cookies 对于网站正常运行是必需的。它们启用页面导航、购物车和安全结账等基本功能。",
+    analyticsCookies: "分析 Cookies",
+    analyticsCookiesDesc: "我们使用分析 cookies 来了解访客如何与我们的网站互动。这有助于我们改进服务和用户体验。",
+    marketingCookies: "营销 Cookies",
+    marketingCookiesDesc: "这些 cookies 跟踪您的浏览习惯，以向您显示相关广告并衡量我们营销活动的效果。",
+    managingCookies: "管理 Cookies",
+    managingCookiesDesc: "您可以通过浏览器设置控制和管理 cookies。但是，禁用某些 cookies 可能会影响您在我们网站上的体验。",
+    updates: "政策更新",
+    cookiePolicyUpdates: "我们可能会不时更新此 Cookie 政策。请定期查看以了解我们对 cookies 的使用情况。",
+    
+    // Payment Methods
+    paymentMethods: "支付方式",
+    paymentMethodsIntro: "我们提供安全便捷的支付选项，让您的购物体验顺畅无忧。",
+    creditDebitCards: "信用卡和借记卡",
+    creditDebitCardsDesc: "使用您喜爱的信用卡或借记卡安全支付。我们接受所有主要卡片提供商以方便您使用。",
+    digitalWallets: "数字钱包",
+    digitalWalletsDesc: "使用您首选的数字钱包快速安全地结账。完美适合快速、非接触式支付。",
+    paypal: "PayPal",
+    paypalDesc: "使用 PayPal 放心购物。享受买家保护和轻松退款。",
+    bankTransfer: "银行转账",
+    bankTransferDesc: "大额订单直接银行转账。安全可靠，适合高价值购买。",
+    allMajorBanks: "支持所有主要银行",
+    securePayments: "安全支付",
+    securePaymentsDesc: "您的支付信息受到行业领先的安全措施保护：",
+    sslEncryption: "所有交易采用 256 位 SSL 加密",
+    pciCompliance: "符合 PCI DSS 标准的支付处理",
+    fraudProtection: "先进的欺诈检测和预防",
+    
+    // Footer
+    privacyPolicy: "隐私政策",
+    termsConditions: "条款与条件",
   },
 };
 
