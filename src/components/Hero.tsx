@@ -24,12 +24,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-4 md:py-6 lg:py-8">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-2 md:py-4 lg:py-6">
       {/* Simplified background element */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_60%)]"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-center">
           {/* Content */}
           <div className="space-y-2 md:space-y-3 text-center md:text-left relative">
             {/* Decorative gradient blobs */}
@@ -50,7 +50,7 @@ const Hero = () => {
               {t("heroDescription")}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 animate-fade-in relative z-10" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 animate-fade-in relative z-10" style={{ animationDelay: '0.3s' }}>
               <Button size="lg" className="group w-full sm:w-auto hover-scale shadow-lg" onClick={scrollToProducts}>
                 {t("shopNow")}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -61,7 +61,7 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex justify-center md:justify-start gap-6 md:gap-8 pt-6 md:pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex justify-center md:justify-start gap-6 md:gap-8 pt-4 md:pt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="hover-scale">
                 <AnimatedCounter end={500} suffix="+" />
                 <div className="text-xs md:text-sm text-muted-foreground">{t("products")}</div>
