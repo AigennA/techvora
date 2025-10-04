@@ -123,8 +123,60 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} {t("techStore")}. {t("allRightsReserved")}</p>
+        <div className="border-t border-border mt-8 pt-6 space-y-4">
+          {/* Payment Methods */}
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-xs text-muted-foreground font-medium">We Accept</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <svg className="h-8" viewBox="0 0 48 32" fill="none">
+                <rect width="48" height="32" rx="4" fill="#1434CB"/>
+                <path d="M15 9h6l-3 14h-6l3-14z" fill="white"/>
+                <path d="M25 9l-2.5 9.5 2.5 4.5h6l2-14h-8z" fill="white"/>
+                <path d="M35 9l-1 6 1 8h6l2-14h-8z" fill="white"/>
+              </svg>
+              <svg className="h-8" viewBox="0 0 48 32" fill="none">
+                <rect width="48" height="32" rx="4" fill="white" stroke="#ccc"/>
+                <circle cx="18" cy="16" r="10" fill="#EB001B"/>
+                <circle cx="30" cy="16" r="10" fill="#FF5F00" opacity="0.8"/>
+              </svg>
+              <svg className="h-8" viewBox="0 0 48 32" fill="none">
+                <rect width="48" height="32" rx="4" fill="#016FD0"/>
+                <path d="M20 16c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5z" fill="white"/>
+              </svg>
+              <div className="h-8 px-3 bg-white rounded flex items-center justify-center border border-gray-300">
+                <span className="text-[#00457C] font-bold text-xs">PayPal</span>
+              </div>
+              <div className="h-8 px-3 bg-black rounded flex items-center justify-center">
+                <span className="text-white font-semibold text-xs">Apple Pay</span>
+              </div>
+              <div className="h-8 px-3 bg-white rounded flex items-center justify-center border border-gray-300">
+                <span className="text-xs font-medium">Google <span className="text-blue-600">Pay</span></span>
+              </div>
+            </div>
+          </div>
+
+          {/* Shipping Partners */}
+          <div className="flex flex-col items-center gap-3 pb-4">
+            <p className="text-xs text-muted-foreground font-medium">Shipping Partners</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="h-6 px-3 flex items-center justify-center bg-white rounded">
+                <span className="text-[#FF6600] font-bold text-sm">FedEx</span>
+              </div>
+              <div className="h-6 px-3 flex items-center justify-center bg-[#FFB500] rounded">
+                <span className="text-[#351C15] font-bold text-sm">UPS</span>
+              </div>
+              <div className="h-6 px-3 flex items-center justify-center bg-white rounded border border-gray-300">
+                <span className="text-[#004B87] font-bold text-sm">USPS</span>
+              </div>
+              <div className="h-6 px-3 flex items-center justify-center bg-white rounded border border-gray-300">
+                <span className="text-red-600 font-bold text-sm">DHL</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
+            <p>&copy; {new Date().getFullYear()} {t("techStore")}. {t("allRightsReserved")}</p>
+          </div>
         </div>
       </div>
     </footer>
