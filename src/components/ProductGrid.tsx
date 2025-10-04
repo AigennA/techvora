@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import productEarbuds from "@/assets/product-earbuds.jpg";
 import productPhoneCase from "@/assets/product-phone-case.jpg";
 import productChargerPad from "@/assets/product-charger-pad.jpg";
@@ -89,7 +90,9 @@ interface ProductGridProps {
 }
 
 const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
-  const filteredProducts = selectedCategory === "all" 
+  const { t } = useLanguage();
+  
+  const filteredProducts = selectedCategory === "all"
     ? products 
     : products.filter(product => {
         const categoryMap: Record<string, string> = {
@@ -106,10 +109,10 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Featured Products
+            {t("featuredProducts")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Browse our carefully selected collection of premium tech accessories
+            {t("featuredDescription")}
           </p>
         </div>
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Star, ImageOff } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ProductCardProps {
   id: string;
@@ -19,6 +20,7 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const { addToCart } = useCart();
+  const { t } = useLanguage();
 
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 border-border bg-card">
@@ -50,12 +52,12 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
         )}
         {!inStock && (
           <Badge className="absolute top-3 right-3 bg-destructive">
-            Out of Stock
+            {t("outOfStock")}
           </Badge>
         )}
         {inStock && (
           <Badge className="absolute top-3 right-3 bg-accent">
-            In Stock
+            {t("inStock")}
           </Badge>
         )}
       </div>
@@ -92,7 +94,7 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
           }}
         >
           <ShoppingCart className="w-4 h-4" />
-          {inStock ? "Add to Cart" : "Notify Me"}
+          {inStock ? t("addToCart") : t("notifyMe")}
         </Button>
       </CardFooter>
     </Card>

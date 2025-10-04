@@ -1,15 +1,19 @@
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-card border-t border-border mt-20">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">TechStore</h3>
+            <h3 className="text-xl font-bold text-primary">{t("techStore")}</h3>
             <p className="text-sm text-muted-foreground">
-              Your trusted destination for premium tech accessories and smart devices.
+              {t("aboutDescription")}
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -29,88 +33,88 @@ const Footer = () => {
 
           {/* Shop */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Shop</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t("quickLinks")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#accessories" className="text-muted-foreground hover:text-primary transition-colors">
-                  Phone Accessories
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("phoneAccessories")}
+                </Link>
               </li>
               <li>
-                <a href="#audio" className="text-muted-foreground hover:text-primary transition-colors">
-                  Audio Devices
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("audio")}
+                </Link>
               </li>
               <li>
-                <a href="#charging" className="text-muted-foreground hover:text-primary transition-colors">
-                  Charging Solutions
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("charging")}
+                </Link>
               </li>
               <li>
-                <a href="#smart-devices" className="text-muted-foreground hover:text-primary transition-colors">
-                  Smart Devices
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("smartDevices")}
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Support</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t("customerService")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact Us
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("contact")}
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Shipping Info
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("shipping")}
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Returns & Refunds
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("returns")}
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Track Order
-                </a>
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  {t("faq")}
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t("aboutUs")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Cookie Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   GDPR Compliance
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} TechStore. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t("techStore")}. {t("allRightsReserved")}</p>
         </div>
       </div>
     </footer>

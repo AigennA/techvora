@@ -1,13 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Smartphone, Headphones, Battery, Watch } from "lucide-react";
-
-const categories = [
-  { id: "all", name: "All Products", icon: null },
-  { id: "accessories", name: "Phone Accessories", icon: Smartphone },
-  { id: "audio", name: "Audio", icon: Headphones },
-  { id: "charging", name: "Charging", icon: Battery },
-  { id: "smart-devices", name: "Smart Devices", icon: Watch },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface CategoryFilterProps {
   selectedCategory: string;
@@ -15,6 +8,16 @@ interface CategoryFilterProps {
 }
 
 const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterProps) => {
+  const { t } = useLanguage();
+  
+  const categories = [
+    { id: "all", name: t("all"), icon: null },
+    { id: "accessories", name: t("phoneAccessories"), icon: Smartphone },
+    { id: "audio", name: t("audio"), icon: Headphones },
+    { id: "charging", name: t("charging"), icon: Battery },
+    { id: "smart-devices", name: t("smartDevices"), icon: Watch },
+  ];
+
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">

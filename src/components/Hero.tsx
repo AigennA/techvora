@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-tech.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToProducts = () => {
     const productsSection = document.querySelector('#products');
     productsSection?.scrollIntoView({ behavior: 'smooth' });
@@ -16,26 +19,25 @@ const Hero = () => {
           <div className="space-y-6">
             <div className="inline-block">
               <span className="px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full">
-                New Arrivals
+                {t("newArrivals")}
               </span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-              Premium Tech Accessories for Your Lifestyle
+              {t("heroTitle")}
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-lg">
-              Discover our curated collection of high-quality phone accessories, audio gear, and smart devices. 
-              Elevate your tech experience with products designed for modern living.
+              {t("heroDescription")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="group" onClick={scrollToProducts}>
-                Shop Now
+                {t("shopNow")}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" onClick={scrollToProducts}>
-                Browse Categories
+                {t("browseCategories")}
               </Button>
             </div>
 
@@ -43,15 +45,15 @@ const Hero = () => {
             <div className="flex gap-8 pt-8">
               <div>
                 <div className="text-3xl font-bold text-foreground">500+</div>
-                <div className="text-sm text-muted-foreground">Products</div>
+                <div className="text-sm text-muted-foreground">{t("products")}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-foreground">50k+</div>
-                <div className="text-sm text-muted-foreground">Happy Customers</div>
+                <div className="text-sm text-muted-foreground">{t("happyCustomers")}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-foreground">4.9/5</div>
-                <div className="text-sm text-muted-foreground">Rating</div>
+                <div className="text-sm text-muted-foreground">{t("rating")}</div>
               </div>
             </div>
           </div>
