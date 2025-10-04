@@ -10,6 +10,8 @@ interface ProductGridProps {
 const ProductGrid = ({ selectedCategory, searchQuery = "" }: ProductGridProps) => {
   const { t } = useLanguage();
   
+  console.log("ProductGrid - searchQuery:", searchQuery, "selectedCategory:", selectedCategory);
+  
   const filteredProducts = products.filter(product => {
     // Filter by category
     const categoryMatch = selectedCategory === "all" || (() => {
@@ -27,8 +29,12 @@ const ProductGrid = ({ selectedCategory, searchQuery = "" }: ProductGridProps) =
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.category.toLowerCase().includes(searchQuery.toLowerCase());
     
+    console.log(`Product: ${product.name}, categoryMatch: ${categoryMatch}, searchMatch: ${searchMatch}`);
+    
     return categoryMatch && searchMatch;
   });
+  
+  console.log("Filtered products count:", filteredProducts.length);
 
   return (
     <section className="py-12 md:py-16 bg-background">

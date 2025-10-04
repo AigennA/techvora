@@ -1,6 +1,5 @@
-import { ShoppingCart, Search, Menu, User, LogOut, Languages, Heart } from "lucide-react";
+import { ShoppingCart, Menu, User, LogOut, Languages, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -8,6 +7,7 @@ import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
+import SearchBar from "@/components/SearchBar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,16 +23,18 @@ interface NavbarProps {
 
 const Navbar = ({ onSearch }: NavbarProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const { user, signOut } = useAuth();
   const { totalItems } = useCart();
   const { language, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
 
-  const handleSearchChange = (value: string) => {
-    setSearchQuery(value);
+  const handleSearchChange = (query: string) => {
+    console.log("Navbar - handleSearchChange called with:", query);
     if (onSearch) {
-      onSearch(value);
+      console.log("Navbar - calling onSearch callback");
+      onSearch(query);
+    } else {
+      console.log("Navbar - onSearch callback is not defined");
     }
   };
 
@@ -68,13 +70,10 @@ const Navbar = ({ onSearch }: NavbarProps = {}) => {
 
           {/* Search & Actions */}
           <div className="flex items-center gap-2 md:gap-4">
-            <div className="hidden lg:flex items-center relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input 
+            <div className="hidden lg:block w-48 xl:w-64">
+              <SearchBar 
+                onSearch={handleSearchChange}
                 placeholder={t("searchProducts")}
-                className="pl-10 w-48 xl:w-64 bg-background"
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e.target.value)}
               />
             </div>
 
@@ -164,11 +163,10 @@ const Navbar = ({ onSearch }: NavbarProps = {}) => {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              <Input 
+              <SearchBar 
+                onSearch={handleSearchChange}
                 placeholder={t("searchProducts")}
-                className="bg-background"
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e.target.value)}
+                className="w-full"
               />
               
               {/* Mobile Language Selector */}

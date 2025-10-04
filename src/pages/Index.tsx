@@ -19,9 +19,14 @@ const Index = () => {
     }
   }, [searchParams]);
 
+  const handleSearch = (query: string) => {
+    console.log("Search query received in Index:", query);
+    setSearchQuery(query);
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onSearch={setSearchQuery} />
+      <Navbar onSearch={handleSearch} />
       <Hero />
       <CategoryFilter 
         selectedCategory={selectedCategory}
