@@ -11,6 +11,8 @@ export interface Product {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
+  discount?: number;
   image: string;
   rating: number;
   category: string;
@@ -23,7 +25,9 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Premium Wireless Earbuds Pro",
-    price: 149.99,
+    price: 119.99,
+    originalPrice: 149.99,
+    discount: 20,
     image: productEarbuds,
     rating: 4.8,
     category: "Audio",
@@ -33,7 +37,9 @@ export const products: Product[] = [
   {
     id: "5",
     name: "Noise-Cancelling Headphones",
-    price: 349.99,
+    price: 279.99,
+    originalPrice: 349.99,
+    discount: 20,
     image: productHeadphones,
     rating: 4.9,
     category: "Audio",
@@ -267,7 +273,9 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Fast Wireless Charging Pad",
-    price: 49.99,
+    price: 39.99,
+    originalPrice: 49.99,
+    discount: 20,
     image: productChargerPad,
     rating: 4.7,
     category: "Charging",
@@ -277,7 +285,9 @@ export const products: Product[] = [
   {
     id: "7",
     name: "65W GaN Fast Charger",
-    price: 59.99,
+    price: 47.99,
+    originalPrice: 59.99,
+    discount: 20,
     image: productFastCharger,
     rating: 4.8,
     category: "Charging",

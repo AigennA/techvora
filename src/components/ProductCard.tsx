@@ -12,13 +12,15 @@ interface ProductCardProps {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
+  discount?: number;
   image: string;
   rating: number;
   category: string;
   inStock: boolean;
 }
 
-const ProductCard = ({ id, name, price, image, rating, category, inStock }: ProductCardProps) => {
+const ProductCard = ({ id, name, price, originalPrice, discount, image, rating, category, inStock }: ProductCardProps) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const { addToCart } = useCart();
@@ -72,6 +74,11 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
         }`}>
           {inStock ? t("inStock") : t("outOfStock")}
         </Badge>
+        {discount && (
+          <Badge className="absolute top-2 right-12 md:top-3 md:right-16 text-xs md:text-sm font-bold bg-red-500 text-white">
+            -{discount}%
+          </Badge>
+        )}
       </div>
       
       <CardContent className="p-3 md:p-4 space-y-2">
@@ -89,9 +96,16 @@ const ProductCard = ({ id, name, price, image, rating, category, inStock }: Prod
           {t(`product_${id}_name`)}
         </h3>
         
-        <p className="text-xl md:text-2xl font-bold text-primary">
-          ${price.toFixed(2)}
-        </p>
+        <div className="space-y-1">
+          {originalPrice && (
+            <p className="text-sm text-muted-foreground line-through">
+              ${originalPrice.toFixed(2)}
+            </p>
+          )}
+          <p className="text-xl md:text-2xl font-bold text-primary">
+            ${price.toFixed(2)}
+          </p>
+        </div>
       </CardContent>
 
       <CardFooter className="p-3 md:p-4 pt-0 flex gap-2">
