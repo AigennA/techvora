@@ -1,11 +1,14 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "en" | "sv" | "zh";
+type Language = "en" | "sv" | "zh" | "pl" | "tr" | "es";
 
 interface Translations {
   en: Record<string, string>;
   sv: Record<string, string>;
   zh: Record<string, string>;
+  pl: Record<string, string>;
+  tr: Record<string, string>;
+  es: Record<string, string>;
 }
 
 const translations: Translations = {
@@ -344,6 +347,342 @@ const translations: Translations = {
     // Footer
     privacyPolicy: "隐私政策",
     termsConditions: "条款与条件",
+  },
+  pl: {
+    // Navbar
+    techStore: "TechStore",
+    phoneAccessories: "Akcesoria do Telefonu",
+    audio: "Audio",
+    charging: "Ładowanie",
+    smartDevices: "Inteligentne Urządzenia",
+    searchProducts: "Szukaj produktów...",
+    signIn: "Zaloguj się",
+    myAccount: "Moje Konto",
+    orders: "Zamówienia",
+    profile: "Profil",
+    signOut: "Wyloguj się",
+    
+    // Hero
+    newArrivals: "Nowości",
+    heroTitle: "Akcesoria technologiczne Premium dla Twojego stylu życia",
+    heroDescription: "Odkryj naszą wyselekcjonowaną kolekcję wysokiej jakości akcesoriów do telefonów, sprzętu audio i inteligentnych urządzeń. Podnieś swoje doświadczenie technologiczne dzięki produktom zaprojektowanym dla nowoczesnego życia.",
+    shopNow: "Kup Teraz",
+    browseCategories: "Przeglądaj Kategorie",
+    products: "Produkty",
+    happyCustomers: "Zadowolonych Klientów",
+    rating: "Ocena",
+    
+    // Products
+    featuredProducts: "Polecane Produkty",
+    featuredDescription: "Przeglądaj naszą starannie wyselekcjonowaną kolekcję akcesoriów technologicznych premium",
+    addToCart: "Dodaj do Koszyka",
+    notifyMe: "Powiadom Mnie",
+    inStock: "W Magazynie",
+    outOfStock: "Wyprzedane",
+    
+    // Categories
+    all: "Wszystkie Produkty",
+    accessories: "Akcesoria do Telefonu",
+    
+    // Footer
+    aboutUs: "O Nas",
+    aboutDescription: "Twoje zaufane miejsce na akcesoria technologiczne premium i inteligentne urządzenia.",
+    quickLinks: "Szybkie Linki",
+    customerService: "Obsługa Klienta",
+    contact: "Kontakt",
+    shipping: "Wysyłka",
+    returns: "Zwroty",
+    faq: "FAQ",
+    allRightsReserved: "Wszelkie prawa zastrzeżone.",
+    
+    // Product names
+    "product_1_name": "Bezprzewodowe Słuchawki Premium Pro",
+    "product_2_name": "Ultra-Cienkie Etui na Telefon",
+    "product_3_name": "Szybka Bezprzewodowa Ładowarka",
+    "product_4_name": "Inteligentny Zegarek Fitness",
+    "product_5_name": "Słuchawki z Redukcją Hałasu",
+    "product_6_name": "Magnetyczny Uchwyt Samochodowy",
+    "product_7_name": "Szybka Ładowarka 65W GaN",
+    "product_8_name": "Inteligentne Centrum Domowe",
+    
+    // Product descriptions
+    "product_1_desc": "Doświadcz premium jakości dźwięku z aktywną redukcją hałasu, 30-godzinną baterią i krystalicznie czystymi rozmowami. Idealne dla melomanów i profesjonalistów.",
+    "product_2_desc": "Ochrona klasy wojskowej w eleganckim designie. Ultra-cienki profil z podwyższonymi krawędziami chroniącymi ekran i aparat.",
+    "product_3_desc": "Ładuj swoje urządzenia bezprzewodowo z błyskawiczną prędkością. Kompatybilne ze wszystkimi urządzeniami Qi. Zawiera inteligentny wskaźnik LED.",
+    "product_4_desc": "Śledź swoje cele fitness dzięki zaawansowanemu monitorowaniu zdrowia. Tętno, śledzenie snu, GPS i 7-dniowa bateria.",
+    "product_5_desc": "Wiodąca w branży redukcja hałasu z premium jakością dźwięku. 40-godzinna bateria, łączność wielopunktowa i wygodne noszenie przez cały dzień.",
+    "product_6_desc": "Silny magnetyczny chwyt zabezpiecza telefon. Obrót 360° i obsługa jedną ręką. Uniwersalna kompatybilność.",
+    "product_7_desc": "Ultra-szybkie ładowanie z technologią GaN. Ładuj laptopy, tablety i telefony jednocześnie. Kompaktowa i przyjazna podróżom.",
+    "product_8_desc": "Kontroluj cały swój inteligentny dom z jednego centrum. Kompatybilne z Alexa, Google Home i HomeKit. Łatwa konfiguracja i automatyzacja.",
+    
+    // Product detail
+    viewDetails: "Zobacz Szczegóły",
+    stockAvailable: "W Magazynie",
+    itemsLeft: "sztuk pozostało",
+    inYourCart: "w koszyku",
+    description: "Opis",
+    
+    // Cookie Policy
+    cookiePolicy: "Polityka Cookies",
+    whatAreCookies: "Czym są Cookies?",
+    cookiesDesc: "Pliki cookie to małe pliki tekstowe umieszczane na Twoim urządzeniu podczas wizyty na naszej stronie. Pomagają nam zapewnić lepsze doświadczenie zakupowe, zapamiętując Twoje preferencje i rozumiejąc, jak korzystasz z naszej strony.",
+    howWeUseCookies: "Jak Używamy Cookies",
+    essentialCookies: "Niezbędne Cookies",
+    essentialCookiesDesc: "Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony. Umożliwiają podstawowe funkcje, takie jak nawigacja po stronie, koszyk zakupów i bezpieczna kasa.",
+    analyticsCookies: "Analityczne Cookies",
+    analyticsCookiesDesc: "Używamy analitycznych plików cookie, aby zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną. Pomaga nam to ulepszać nasze usługi i doświadczenie użytkownika.",
+    marketingCookies: "Marketingowe Cookies",
+    marketingCookiesDesc: "Te pliki cookie śledzą Twoje nawyki przeglądania, aby pokazywać Ci odpowiednie reklamy i mierzyć skuteczność naszych kampanii marketingowych.",
+    managingCookies: "Zarządzanie Cookies",
+    managingCookiesDesc: "Możesz kontrolować i zarządzać plikami cookie za pomocą ustawień przeglądarki. Jednak wyłączenie niektórych plików cookie może wpłynąć na Twoje doświadczenie na naszej stronie.",
+    updates: "Aktualizacje",
+    cookiePolicyUpdates: "Możemy od czasu do czasu aktualizować tę Politykę Cookies. Sprawdzaj regularnie, aby być na bieżąco z naszym wykorzystaniem plików cookie.",
+    
+    // Payment Methods
+    paymentMethods: "Metody Płatności",
+    paymentMethodsIntro: "Oferujemy bezpieczne i wygodne opcje płatności, aby Twoje zakupy były płynne i bezproblemowe.",
+    creditDebitCards: "Karty Kredytowe i Debetowe",
+    creditDebitCardsDesc: "Płać bezpiecznie swoją ulubioną kartą kredytową lub debetową. Akceptujemy wszystkich głównych dostawców kart dla Twojej wygody.",
+    digitalWallets: "Portfele Cyfrowe",
+    digitalWalletsDesc: "Szybka i bezpieczna kasa za pomocą preferowanego portfela cyfrowego. Idealne do szybkich, bezdotykowych płatności.",
+    paypal: "PayPal",
+    paypalDesc: "Kupuj z pewnością korzystając z PayPal. Skorzystaj z ochrony kupującego i łatwych zwrotów.",
+    bankTransfer: "Przelew Bankowy",
+    bankTransferDesc: "Bezpośredni przelew bankowy dla dużych zamówień. Bezpieczny i niezawodny dla zakupów o wysokiej wartości.",
+    allMajorBanks: "Wszystkie Główne Banki Obsługiwane",
+    securePayments: "Bezpieczne Płatności",
+    securePaymentsDesc: "Twoje informacje o płatności są chronione najnowocześniejszymi środkami bezpieczeństwa:",
+    sslEncryption: "256-bitowe szyfrowanie SSL dla wszystkich transakcji",
+    pciCompliance: "Przetwarzanie płatności zgodne z PCI DSS",
+    fraudProtection: "Zaawansowane wykrywanie i zapobieganie oszustwom",
+    
+    // Footer
+    privacyPolicy: "Polityka Prywatności",
+    termsConditions: "Regulamin",
+  },
+  tr: {
+    // Navbar
+    techStore: "TechStore",
+    phoneAccessories: "Telefon Aksesuarları",
+    audio: "Ses",
+    charging: "Şarj",
+    smartDevices: "Akıllı Cihazlar",
+    searchProducts: "Ürün ara...",
+    signIn: "Giriş Yap",
+    myAccount: "Hesabım",
+    orders: "Siparişler",
+    profile: "Profil",
+    signOut: "Çıkış Yap",
+    
+    // Hero
+    newArrivals: "Yeni Gelenler",
+    heroTitle: "Yaşam Tarzınız İçin Premium Teknoloji Aksesuarları",
+    heroDescription: "Yüksek kaliteli telefon aksesuarları, ses ekipmanları ve akıllı cihazlardan oluşan seçkin koleksiyonumuzu keşfedin. Modern yaşam için tasarlanmış ürünlerle teknoloji deneyiminizi yükseltin.",
+    shopNow: "Şimdi Alışveriş Yap",
+    browseCategories: "Kategorilere Göz At",
+    products: "Ürünler",
+    happyCustomers: "Mutlu Müşteri",
+    rating: "Değerlendirme",
+    
+    // Products
+    featuredProducts: "Öne Çıkan Ürünler",
+    featuredDescription: "Özenle seçilmiş premium teknoloji aksesuarları koleksiyonumuza göz atın",
+    addToCart: "Sepete Ekle",
+    notifyMe: "Beni Bilgilendir",
+    inStock: "Stokta",
+    outOfStock: "Stokta Yok",
+    
+    // Categories
+    all: "Tüm Ürünler",
+    accessories: "Telefon Aksesuarları",
+    
+    // Footer
+    aboutUs: "Hakkımızda",
+    aboutDescription: "Premium teknoloji aksesuarları ve akıllı cihazlar için güvenilir hedefiniz.",
+    quickLinks: "Hızlı Bağlantılar",
+    customerService: "Müşteri Hizmetleri",
+    contact: "İletişim",
+    shipping: "Kargo",
+    returns: "İadeler",
+    faq: "SSS",
+    allRightsReserved: "Tüm hakları saklıdır.",
+    
+    // Product names
+    "product_1_name": "Premium Kablosuz Kulaklık Pro",
+    "product_2_name": "Ultra-İnce Telefon Kılıfı",
+    "product_3_name": "Hızlı Kablosuz Şarj Pedi",
+    "product_4_name": "Akıllı Fitness Saati",
+    "product_5_name": "Gürültü Önleyici Kulaklıklar",
+    "product_6_name": "Manyetik Araç Tutucu",
+    "product_7_name": "65W GaN Hızlı Şarj Cihazı",
+    "product_8_name": "Akıllı Ev Merkezi",
+    
+    // Product descriptions
+    "product_1_desc": "Aktif gürültü önleme, 30 saatlik pil ömrü ve kristal berraklığında aramalarla premium ses kalitesini deneyimleyin. Müzik severler ve profesyoneller için mükemmel.",
+    "product_2_desc": "Şık tasarımda askeri sınıf koruma. Ekranınızı ve kameranızı korumak için yükseltilmiş kenarlarla ultra ince profil.",
+    "product_3_desc": "Cihazlarınızı kablosuz olarak şimşek hızında şarj edin. Tüm Qi özellikli cihazlarla uyumlu. Akıllı LED gösterge içerir.",
+    "product_4_desc": "Gelişmiş sağlık izleme ile fitness hedeflerinizi takip edin. Kalp atış hızı, uyku takibi, GPS ve 7 günlük pil ömrü.",
+    "product_5_desc": "Premium ses kalitesiyle sektör lideri gürültü önleme. 40 saatlik pil, çok noktalı bağlantı ve tüm gün rahat kullanım.",
+    "product_6_desc": "Güçlü manyetik tutuş telefonunuzu güvende tutar. 360° dönme ve tek elle kullanım. Evrensel uyumluluk.",
+    "product_7_desc": "GaN teknolojisi ile ultra hızlı şarj. Dizüstü bilgisayarları, tabletleri ve telefonları aynı anda şarj edin. Kompakt ve seyahat dostu.",
+    "product_8_desc": "Tüm akıllı evinizi tek bir merkezden kontrol edin. Alexa, Google Home ve HomeKit ile uyumlu. Kolay kurulum ve otomasyon.",
+    
+    // Product detail
+    viewDetails: "Detayları Görüntüle",
+    stockAvailable: "Stokta",
+    itemsLeft: "adet kaldı",
+    inYourCart: "sepetinizde",
+    description: "Açıklama",
+    
+    // Cookie Policy
+    cookiePolicy: "Çerez Politikası",
+    whatAreCookies: "Çerezler Nedir?",
+    cookiesDesc: "Çerezler, web sitemizi ziyaret ettiğinizde cihazınıza yerleştirilen küçük metin dosyalarıdır. Tercihlerinizi hatırlayarak ve sitemizi nasıl kullandığınızı anlayarak size daha iyi bir alışveriş deneyimi sunmamıza yardımcı olurlar.",
+    howWeUseCookies: "Çerezleri Nasıl Kullanıyoruz",
+    essentialCookies: "Gerekli Çerezler",
+    essentialCookiesDesc: "Bu çerezler web sitesinin düzgün çalışması için gereklidir. Sayfa gezinme, alışveriş sepeti ve güvenli ödeme gibi temel işlevleri etkinleştirirler.",
+    analyticsCookies: "Analitik Çerezler",
+    analyticsCookiesDesc: "Ziyaretçilerin web sitemizle nasıl etkileşime girdiğini anlamak için analitik çerezler kullanırız. Bu, hizmetlerimizi ve kullanıcı deneyimimizi geliştirmemize yardımcı olur.",
+    marketingCookies: "Pazarlama Çerezleri",
+    marketingCookiesDesc: "Bu çerezler, size ilgili reklamlar göstermek ve pazarlama kampanyalarımızın etkinliğini ölçmek için tarama alışkanlıklarınızı takip eder.",
+    managingCookies: "Çerezleri Yönetme",
+    managingCookiesDesc: "Tarayıcı ayarlarınız aracılığıyla çerezleri kontrol edebilir ve yönetebilirsiniz. Ancak, belirli çerezleri devre dışı bırakmak web sitemizdeki deneyiminizi etkileyebilir.",
+    updates: "Güncellemeler",
+    cookiePolicyUpdates: "Bu Çerez Politikasını zaman zaman güncelleyebiliriz. Çerez kullanımımız hakkında bilgi sahibi olmak için düzenli olarak kontrol edin.",
+    
+    // Payment Methods
+    paymentMethods: "Ödeme Yöntemleri",
+    paymentMethodsIntro: "Alışveriş deneyiminizi sorunsuz ve zahmetsiz hale getirmek için güvenli ve kullanışlı ödeme seçenekleri sunuyoruz.",
+    creditDebitCards: "Kredi ve Banka Kartları",
+    creditDebitCardsDesc: "Favori kredi veya banka kartınızla güvenle ödeme yapın. Kolaylığınız için tüm büyük kart sağlayıcılarını kabul ediyoruz.",
+    digitalWallets: "Dijital Cüzdanlar",
+    digitalWalletsDesc: "Tercih ettiğiniz dijital cüzdanı kullanarak hızlı ve güvenli ödeme. Hızlı, temassız ödemeler için mükemmel.",
+    paypal: "PayPal",
+    paypalDesc: "PayPal kullanarak güvenle alışveriş yapın. Alıcı koruması ve kolay iadelerden yararlanın.",
+    bankTransfer: "Banka Havalesi",
+    bankTransferDesc: "Büyük siparişler için doğrudan banka havalesi. Yüksek değerli alımlar için güvenli ve güvenilir.",
+    allMajorBanks: "Tüm Büyük Bankalar Desteklenir",
+    securePayments: "Güvenli Ödemeler",
+    securePaymentsDesc: "Ödeme bilgileriniz sektör lideri güvenlik önlemleriyle korunmaktadır:",
+    sslEncryption: "Tüm işlemler için 256-bit SSL şifrelemesi",
+    pciCompliance: "PCI DSS uyumlu ödeme işleme",
+    fraudProtection: "Gelişmiş dolandırıcılık tespiti ve önleme",
+    
+    // Footer
+    privacyPolicy: "Gizlilik Politikası",
+    termsConditions: "Şartlar ve Koşullar",
+  },
+  es: {
+    // Navbar
+    techStore: "TechStore",
+    phoneAccessories: "Accesorios para Teléfono",
+    audio: "Audio",
+    charging: "Carga",
+    smartDevices: "Dispositivos Inteligentes",
+    searchProducts: "Buscar productos...",
+    signIn: "Iniciar Sesión",
+    myAccount: "Mi Cuenta",
+    orders: "Pedidos",
+    profile: "Perfil",
+    signOut: "Cerrar Sesión",
+    
+    // Hero
+    newArrivals: "Novedades",
+    heroTitle: "Accesorios Tecnológicos Premium para tu Estilo de Vida",
+    heroDescription: "Descubre nuestra colección seleccionada de accesorios para teléfonos de alta calidad, equipos de audio y dispositivos inteligentes. Eleva tu experiencia tecnológica con productos diseñados para la vida moderna.",
+    shopNow: "Comprar Ahora",
+    browseCategories: "Explorar Categorías",
+    products: "Productos",
+    happyCustomers: "Clientes Satisfechos",
+    rating: "Valoración",
+    
+    // Products
+    featuredProducts: "Productos Destacados",
+    featuredDescription: "Explora nuestra colección cuidadosamente seleccionada de accesorios tecnológicos premium",
+    addToCart: "Añadir al Carrito",
+    notifyMe: "Notificarme",
+    inStock: "En Stock",
+    outOfStock: "Agotado",
+    
+    // Categories
+    all: "Todos los Productos",
+    accessories: "Accesorios para Teléfono",
+    
+    // Footer
+    aboutUs: "Sobre Nosotros",
+    aboutDescription: "Tu destino de confianza para accesorios tecnológicos premium y dispositivos inteligentes.",
+    quickLinks: "Enlaces Rápidos",
+    customerService: "Servicio al Cliente",
+    contact: "Contacto",
+    shipping: "Envío",
+    returns: "Devoluciones",
+    faq: "Preguntas Frecuentes",
+    allRightsReserved: "Todos los derechos reservados.",
+    
+    // Product names
+    "product_1_name": "Auriculares Inalámbricos Premium Pro",
+    "product_2_name": "Funda Ultra-Delgada para Teléfono",
+    "product_3_name": "Cargador Inalámbrico Rápido",
+    "product_4_name": "Reloj Inteligente de Fitness",
+    "product_5_name": "Auriculares con Cancelación de Ruido",
+    "product_6_name": "Soporte Magnético para Auto",
+    "product_7_name": "Cargador Rápido 65W GaN",
+    "product_8_name": "Centro de Hogar Inteligente",
+    
+    // Product descriptions
+    "product_1_desc": "Experimenta calidad de sonido premium con cancelación activa de ruido, 30 horas de batería y llamadas cristalinas. Perfecto para amantes de la música y profesionales.",
+    "product_2_desc": "Protección de grado militar en un diseño elegante. Perfil ultra-delgado con bordes elevados para proteger tu pantalla y cámara.",
+    "product_3_desc": "Carga tus dispositivos de forma inalámbrica a velocidad de rayo. Compatible con todos los dispositivos Qi. Incluye indicador LED inteligente.",
+    "product_4_desc": "Rastrea tus objetivos de fitness con monitoreo avanzado de salud. Frecuencia cardíaca, seguimiento del sueño, GPS y 7 días de batería.",
+    "product_5_desc": "Cancelación de ruido líder en la industria con calidad de sonido premium. 40 horas de batería, conectividad multipunto y uso cómodo todo el día.",
+    "product_6_desc": "Agarre magnético fuerte mantiene tu teléfono seguro. Rotación 360° y operación con una mano. Compatibilidad universal.",
+    "product_7_desc": "Carga ultra-rápida con tecnología GaN. Carga portátiles, tabletas y teléfonos simultáneamente. Compacto y amigable para viajes.",
+    "product_8_desc": "Controla todo tu hogar inteligente desde un centro. Compatible con Alexa, Google Home y HomeKit. Configuración y automatización fáciles.",
+    
+    // Product detail
+    viewDetails: "Ver Detalles",
+    stockAvailable: "En Stock",
+    itemsLeft: "unidades disponibles",
+    inYourCart: "en tu carrito",
+    description: "Descripción",
+    
+    // Cookie Policy
+    cookiePolicy: "Política de Cookies",
+    whatAreCookies: "¿Qué son las Cookies?",
+    cookiesDesc: "Las cookies son pequeños archivos de texto que se colocan en tu dispositivo cuando visitas nuestro sitio web. Nos ayudan a brindarte una mejor experiencia de compra al recordar tus preferencias y entender cómo usas nuestro sitio.",
+    howWeUseCookies: "Cómo Usamos las Cookies",
+    essentialCookies: "Cookies Esenciales",
+    essentialCookiesDesc: "Estas cookies son necesarias para que el sitio web funcione correctamente. Habilitan funciones básicas como navegación de página, carrito de compras y pago seguro.",
+    analyticsCookies: "Cookies Analíticas",
+    analyticsCookiesDesc: "Usamos cookies analíticas para entender cómo los visitantes interactúan con nuestro sitio web. Esto nos ayuda a mejorar nuestros servicios y experiencia del usuario.",
+    marketingCookies: "Cookies de Marketing",
+    marketingCookiesDesc: "Estas cookies rastrean tus hábitos de navegación para mostrarte anuncios relevantes y medir la efectividad de nuestras campañas de marketing.",
+    managingCookies: "Gestión de Cookies",
+    managingCookiesDesc: "Puedes controlar y gestionar las cookies a través de la configuración de tu navegador. Sin embargo, deshabilitar ciertas cookies puede afectar tu experiencia en nuestro sitio web.",
+    updates: "Actualizaciones",
+    cookiePolicyUpdates: "Podemos actualizar esta Política de Cookies de vez en cuando. Por favor, revisa regularmente para mantenerte informado sobre nuestro uso de cookies.",
+    
+    // Payment Methods
+    paymentMethods: "Métodos de Pago",
+    paymentMethodsIntro: "Ofrecemos opciones de pago seguras y convenientes para hacer tu experiencia de compra fluida y sin complicaciones.",
+    creditDebitCards: "Tarjetas de Crédito y Débito",
+    creditDebitCardsDesc: "Paga de forma segura con tu tarjeta de crédito o débito favorita. Aceptamos todos los principales proveedores de tarjetas para tu comodidad.",
+    digitalWallets: "Billeteras Digitales",
+    digitalWalletsDesc: "Pago rápido y seguro usando tu billetera digital preferida. Perfecto para pagos rápidos sin contacto.",
+    paypal: "PayPal",
+    paypalDesc: "Compra con confianza usando PayPal. Benefíciate de la protección al comprador y devoluciones fáciles.",
+    bankTransfer: "Transferencia Bancaria",
+    bankTransferDesc: "Transferencia bancaria directa para pedidos grandes. Seguro y confiable para compras de alto valor.",
+    allMajorBanks: "Todos los Bancos Principales Soportados",
+    securePayments: "Pagos Seguros",
+    securePaymentsDesc: "Tu información de pago está protegida con medidas de seguridad líderes en la industria:",
+    sslEncryption: "Encriptación SSL de 256 bits para todas las transacciones",
+    pciCompliance: "Procesamiento de pagos conforme a PCI DSS",
+    fraudProtection: "Detección y prevención avanzada de fraudes",
+    
+    // Footer
+    privacyPolicy: "Política de Privacidad",
+    termsConditions: "Términos y Condiciones",
   },
 };
 

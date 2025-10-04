@@ -16,12 +16,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navbar = () => {
+interface NavbarProps {
+  onSearch?: (query: string) => void;
+}
+
+const Navbar = ({ onSearch }: NavbarProps = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { user, signOut } = useAuth();
   const { totalItems } = useCart();
   const { language, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
+
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    if (onSearch) {
+      onSearch(value);
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
@@ -59,6 +71,8 @@ const Navbar = () => {
               <Input 
                 placeholder={t("searchProducts")}
                 className="pl-10 w-48 xl:w-64 bg-background"
+                value={searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
               />
             </div>
 
@@ -78,6 +92,15 @@ const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLanguage("zh")}>
                   中文 {language === "zh" && "✓"}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage("pl")}>
+                  Polski {language === "pl" && "✓"}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage("tr")}>
+                  Türkçe {language === "tr" && "✓"}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage("es")}>
+                  Español {language === "es" && "✓"}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -142,6 +165,8 @@ const Navbar = () => {
               <Input 
                 placeholder={t("searchProducts")}
                 className="bg-background"
+                value={searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
               />
               
               {/* Mobile Language Selector */}
@@ -166,6 +191,27 @@ const Navbar = () => {
                   onClick={() => setLanguage("zh")}
                 >
                   中文
+                </Button>
+                <Button
+                  variant={language === "pl" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("pl")}
+                >
+                  PL
+                </Button>
+                <Button
+                  variant={language === "tr" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("tr")}
+                >
+                  TR
+                </Button>
+                <Button
+                  variant={language === "es" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLanguage("es")}
+                >
+                  ES
                 </Button>
               </div>
 

@@ -95,22 +95,31 @@ const products = [
 
 interface ProductGridProps {
   selectedCategory: string;
+  searchQuery?: string;
 }
 
-const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
+const ProductGrid = ({ selectedCategory, searchQuery = "" }: ProductGridProps) => {
   const { t } = useLanguage();
   
-  const filteredProducts = selectedCategory === "all"
-    ? products 
-    : products.filter(product => {
-        const categoryMap: Record<string, string> = {
-          "accessories": "Phone Accessories",
-          "audio": "Audio",
-          "charging": "Charging",
-          "smart-devices": "Smart Devices",
-        };
-        return product.category === categoryMap[selectedCategory];
-      });
+  const filteredProducts = products.filter(product => {
+    // Filter by category
+    const categoryMatch = selectedCategory === "all" || (() => {
+      const categoryMap: Record<string, string> = {
+        "accessories": "Phone Accessories",
+        "audio": "Audio",
+        "charging": "Charging",
+        "smart-devices": "Smart Devices",
+      };
+      return product.category === categoryMap[selectedCategory];
+    })();
+    
+    // Filter by search query
+    const searchMatch = searchQuery === "" || 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    return categoryMatch && searchMatch;
+  });
 
   return (
     <section className="py-12 md:py-16 bg-background">
