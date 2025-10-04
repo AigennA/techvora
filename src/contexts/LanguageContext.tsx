@@ -120,6 +120,16 @@ const translations: Translations = {
     pciCompliance: "PCI DSS compliant payment processing",
     fraudProtection: "Advanced fraud detection and prevention",
     
+    // Shipping
+    freeShipping: "Free Shipping",
+    freeShippingDesc: "Enjoy free standard shipping on all orders over $50 within the United States.",
+    fastDelivery: "Fast Delivery",
+    fastDeliveryDesc: "Standard delivery takes 3-5 business days. Express shipping available for faster delivery.",
+    orderTracking: "Order Tracking",
+    orderTrackingDesc: "Track your order every step of the way with our real-time tracking system.",
+    internationalShipping: "International Shipping",
+    internationalShippingDesc: "We ship to over 100 countries worldwide. Customs fees may apply.",
+    
     // Footer
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
@@ -231,6 +241,16 @@ const translations: Translations = {
     sslEncryption: "256-bitars SSL-kryptering för alla transaktioner",
     pciCompliance: "PCI DSS-kompatibel betalningshantering",
     fraudProtection: "Avancerad upptäckt och förebyggande av bedrägerier",
+    
+    // Shipping
+    freeShipping: "Fri Frakt",
+    freeShippingDesc: "Njut av gratis standardfrakt på alla beställningar över $50 inom USA.",
+    fastDelivery: "Snabb Leverans",
+    fastDeliveryDesc: "Standardleverans tar 3-5 arbetsdagar. Expressleverans tillgänglig för snabbare leverans.",
+    orderTracking: "Orderspårning",
+    orderTrackingDesc: "Spåra din beställning varje steg på vägen med vårt realtidsspårningssystem.",
+    internationalShipping: "Internationell Frakt",
+    internationalShippingDesc: "Vi skickar till över 100 länder världen över. Tullavgifter kan tillkomma.",
     
     // Footer
     privacyPolicy: "Integritetspolicy",
@@ -344,6 +364,16 @@ const translations: Translations = {
     pciCompliance: "符合 PCI DSS 标准的支付处理",
     fraudProtection: "先进的欺诈检测和预防",
     
+    // Shipping
+    freeShipping: "免费送货",
+    freeShippingDesc: "在美国境内所有订单满 $50 即可享受免费标准送货。",
+    fastDelivery: "快速配送",
+    fastDeliveryDesc: "标准配送需要 3-5 个工作日。提供快速配送服务以实现更快的交付。",
+    orderTracking: "订单追踪",
+    orderTrackingDesc: "通过我们的实时跟踪系统追踪您的订单每一步。",
+    internationalShipping: "国际运输",
+    internationalShippingDesc: "我们向全球 100 多个国家发货。可能会收取关税。",
+    
     // Footer
     privacyPolicy: "隐私政策",
     termsConditions: "条款与条件",
@@ -455,6 +485,16 @@ const translations: Translations = {
     sslEncryption: "256-bitowe szyfrowanie SSL dla wszystkich transakcji",
     pciCompliance: "Przetwarzanie płatności zgodne z PCI DSS",
     fraudProtection: "Zaawansowane wykrywanie i zapobieganie oszustwom",
+    
+    // Shipping
+    freeShipping: "Darmowa Wysyłka",
+    freeShippingDesc: "Ciesz się darmową standardową wysyłką na wszystkie zamówienia powyżej $50 w Stanach Zjednoczonych.",
+    fastDelivery: "Szybka Dostawa",
+    fastDeliveryDesc: "Standardowa dostawa trwa 3-5 dni roboczych. Dostępna ekspresowa wysyłka dla szybszej dostawy.",
+    orderTracking: "Śledzenie Zamówienia",
+    orderTrackingDesc: "Śledź swoje zamówienie na każdym kroku dzięki naszemu systemowi śledzenia w czasie rzeczywistym.",
+    internationalShipping: "Wysyłka Międzynarodowa",
+    internationalShippingDesc: "Wysyłamy do ponad 100 krajów na całym świecie. Mogą obowiązywać opłaty celne.",
     
     // Footer
     privacyPolicy: "Polityka Prywatności",
@@ -568,6 +608,16 @@ const translations: Translations = {
     pciCompliance: "PCI DSS uyumlu ödeme işleme",
     fraudProtection: "Gelişmiş dolandırıcılık tespiti ve önleme",
     
+    // Shipping
+    freeShipping: "Ücretsiz Kargo",
+    freeShippingDesc: "ABD içinde $50 üzeri tüm siparişlerde ücretsiz standart kargo keyfini çıkarın.",
+    fastDelivery: "Hızlı Teslimat",
+    fastDeliveryDesc: "Standart teslimat 3-5 iş günü sürer. Daha hızlı teslimat için ekspres kargo mevcuttur.",
+    orderTracking: "Sipariş Takibi",
+    orderTrackingDesc: "Gerçek zamanlı takip sistemimizle siparişinizi her adımda takip edin.",
+    internationalShipping: "Uluslararası Kargo",
+    internationalShippingDesc: "Dünya çapında 100'den fazla ülkeye gönderim yapıyoruz. Gümrük ücretleri uygulanabilir.",
+    
     // Footer
     privacyPolicy: "Gizlilik Politikası",
     termsConditions: "Şartlar ve Koşullar",
@@ -679,6 +729,16 @@ const translations: Translations = {
     sslEncryption: "Encriptación SSL de 256 bits para todas las transacciones",
     pciCompliance: "Procesamiento de pagos conforme a PCI DSS",
     fraudProtection: "Detección y prevención avanzada de fraudes",
+    
+    // Shipping
+    freeShipping: "Envío Gratis",
+    freeShippingDesc: "Disfruta de envío estándar gratuito en todos los pedidos superiores a $50 dentro de Estados Unidos.",
+    fastDelivery: "Entrega Rápida",
+    fastDeliveryDesc: "La entrega estándar toma 3-5 días hábiles. Envío exprés disponible para entrega más rápida.",
+    orderTracking: "Seguimiento de Pedido",
+    orderTrackingDesc: "Rastrea tu pedido en cada paso con nuestro sistema de seguimiento en tiempo real.",
+    internationalShipping: "Envío Internacional",
+    internationalShippingDesc: "Enviamos a más de 100 países en todo el mundo. Pueden aplicar tarifas de aduana.",
     
     // Footer
     privacyPolicy: "Política de Privacidad",

@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CreditCard, Smartphone, Wallet, Building2, ShieldCheck } from "lucide-react";
+import { CreditCard, Smartphone, Wallet, Building2, ShieldCheck, Landmark } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const PaymentMethods = () => {
@@ -12,25 +12,32 @@ const PaymentMethods = () => {
       icon: CreditCard,
       title: t("creditDebitCards"),
       description: t("creditDebitCardsDesc"),
-      accepted: "Visa, Mastercard, American Express, Discover"
+      accepted: "Visa, Mastercard, American Express, Discover",
+      logos: [
+        { name: "Visa", svg: "M0 13.1h6.4l4-10.2H4l-4 10.2zM24 13.1l3.6-10.2h-5.3L18.7 13h5.3zM13.4 2.9L9.7 13.1h5.4l3.7-10.2h-5.4zm16.8 0l-2 5.3 1.5 4.9h5.1l-4.6-10.2z", color: "#1434CB" },
+        { name: "Mastercard", svg: "M23 12c0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7 7-3.1 7-7zm-14 0c0-3.9-3.1-7-7-7S-5 8.1-5 12s3.1 7 7 7 7-3.1 7-7z", color: "#EB001B" }
+      ]
     },
     {
       icon: Smartphone,
       title: t("digitalWallets"),
       description: t("digitalWalletsDesc"),
-      accepted: "Apple Pay, Google Pay, Samsung Pay"
+      accepted: "Apple Pay, Google Pay, Samsung Pay",
+      logos: []
     },
     {
       icon: Wallet,
       title: t("paypal"),
       description: t("paypalDesc"),
-      accepted: "PayPal, PayPal Credit"
+      accepted: "PayPal, PayPal Credit",
+      logos: []
     },
     {
-      icon: Building2,
+      icon: Landmark,
       title: t("bankTransfer"),
       description: t("bankTransferDesc"),
-      accepted: t("allMajorBanks")
+      accepted: t("allMajorBanks"),
+      logos: []
     }
   ];
 
@@ -60,8 +67,27 @@ const PaymentMethods = () => {
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-xl mb-2">{method.title}</CardTitle>
-                        <CardDescription className="text-sm text-muted-foreground">
+                        <CardDescription className="text-sm text-muted-foreground flex flex-wrap gap-2 items-center">
                           {method.accepted}
+                          {index === 0 && (
+                            <div className="flex gap-2 mt-2">
+                              <svg className="h-6" viewBox="0 0 48 32" fill="none">
+                                <rect width="48" height="32" rx="4" fill="#1434CB"/>
+                                <path d="M15 9h6l-3 14h-6l3-14z" fill="white"/>
+                                <path d="M25 9l-2.5 9.5 2.5 4.5h6l2-14h-8z" fill="white"/>
+                                <path d="M35 9l-1 6 1 8h6l2-14h-8z" fill="white"/>
+                              </svg>
+                              <svg className="h-6" viewBox="0 0 48 32" fill="none">
+                                <rect width="48" height="32" rx="4" fill="white"/>
+                                <circle cx="18" cy="16" r="10" fill="#EB001B"/>
+                                <circle cx="30" cy="16" r="10" fill="#FF5F00" opacity="0.8"/>
+                              </svg>
+                              <svg className="h-6" viewBox="0 0 48 32" fill="none">
+                                <rect width="48" height="32" rx="4" fill="#016FD0"/>
+                                <path d="M20 16c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5z" fill="white"/>
+                              </svg>
+                            </div>
+                          )}
                         </CardDescription>
                       </div>
                     </div>

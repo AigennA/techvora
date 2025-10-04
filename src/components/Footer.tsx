@@ -68,8 +68,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/shipping" className="text-muted-foreground hover:text-primary transition-colors">
-                  {t("shipping")}
+                <Link to="/shipping" className="text-muted-foreground hover:text-primary transition-colors" title={t("freeShippingDesc")}>
+                  {t("freeShipping")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/shipping" className="text-muted-foreground hover:text-primary transition-colors" title={t("fastDeliveryDesc")}>
+                  {t("fastDelivery")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/shipping" className="text-muted-foreground hover:text-primary transition-colors" title={t("orderTrackingDesc")}>
+                  {t("orderTracking")}
                 </Link>
               </li>
               <li>
