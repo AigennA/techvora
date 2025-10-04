@@ -2,8 +2,8 @@ import { ShoppingCart, Search, Menu, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,18 +12,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { toast } from "sonner";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
   const { user, signOut } = useAuth();
-
-  const handleSignOut = async () => {
-    await signOut();
-    toast.success("Signed out successfully");
-    navigate("/");
-  };
+  const navigate = useNavigate();
 
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
@@ -31,7 +24,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-8">
-            <h1 className="text-2xl font-bold text-primary">TechStore</h1>
+            <h1 className="text-2xl font-bold text-primary cursor-pointer" onClick={() => navigate("/")}>
+              TechStore
+            </h1>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
@@ -74,14 +69,14 @@ const Navbar = () => {
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => navigate("/profile")}>
-                    Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate("/orders")}>
+                  <DropdownMenuItem onClick={() => navigate("/")}>
                     Orders
                   </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate("/")}>
+                    Profile
+                  </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleSignOut}>
+                  <DropdownMenuItem onClick={signOut}>
                     <LogOut className="w-4 h-4 mr-2" />
                     Sign Out
                   </DropdownMenuItem>
