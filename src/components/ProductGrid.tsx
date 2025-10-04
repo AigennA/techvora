@@ -1,4 +1,12 @@
 import ProductCard from "./ProductCard";
+import productEarbuds from "@/assets/product-earbuds.jpg";
+import productPhoneCase from "@/assets/product-phone-case.jpg";
+import productChargerPad from "@/assets/product-charger-pad.jpg";
+import productSmartwatch from "@/assets/product-smartwatch.jpg";
+import productHeadphones from "@/assets/product-headphones.jpg";
+import productCarMount from "@/assets/product-car-mount.jpg";
+import productFastCharger from "@/assets/product-fast-charger.jpg";
+import productSmartHub from "@/assets/product-smart-hub.jpg";
 
 // Mock product data
 const products = [
@@ -6,7 +14,7 @@ const products = [
     id: "1",
     name: "Premium Wireless Earbuds Pro",
     price: 149.99,
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
+    image: productEarbuds,
     rating: 4.8,
     category: "Audio",
     inStock: true,
@@ -15,7 +23,7 @@ const products = [
     id: "2",
     name: "Ultra-Slim Phone Case",
     price: 29.99,
-    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500&q=80",
+    image: productPhoneCase,
     rating: 4.6,
     category: "Phone Accessories",
     inStock: true,
@@ -24,7 +32,7 @@ const products = [
     id: "3",
     name: "Fast Wireless Charging Pad",
     price: 49.99,
-    image: "https://images.unsplash.com/photo-1591290619762-c588f5ad7b90?w=500&q=80",
+    image: productChargerPad,
     rating: 4.7,
     category: "Charging",
     inStock: true,
@@ -33,7 +41,7 @@ const products = [
     id: "4",
     name: "Smart Fitness Watch",
     price: 299.99,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+    image: productSmartwatch,
     rating: 4.9,
     category: "Smart Devices",
     inStock: false,
@@ -42,7 +50,7 @@ const products = [
     id: "5",
     name: "Noise-Cancelling Headphones",
     price: 349.99,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+    image: productHeadphones,
     rating: 4.9,
     category: "Audio",
     inStock: true,
@@ -51,7 +59,7 @@ const products = [
     id: "6",
     name: "Magnetic Car Mount",
     price: 24.99,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80",
+    image: productCarMount,
     rating: 4.5,
     category: "Phone Accessories",
     inStock: true,
@@ -60,7 +68,7 @@ const products = [
     id: "7",
     name: "65W GaN Fast Charger",
     price: 59.99,
-    image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=500&q=80",
+    image: productFastCharger,
     rating: 4.8,
     category: "Charging",
     inStock: true,
@@ -69,7 +77,7 @@ const products = [
     id: "8",
     name: "Smart Home Hub",
     price: 129.99,
-    image: "https://images.unsplash.com/photo-1558089687-61c00d8792ff?w=500&q=80",
+    image: productSmartHub,
     rating: 4.6,
     category: "Smart Devices",
     inStock: true,
