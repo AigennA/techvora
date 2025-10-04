@@ -10,34 +10,27 @@ const PaymentMethods = () => {
   const paymentMethods = [
     {
       icon: CreditCard,
-      title: t("creditDebitCards"),
-      description: t("creditDebitCardsDesc"),
-      accepted: "Visa, Mastercard, American Express, Discover",
-      logos: [
-        { name: "Visa", svg: "M0 13.1h6.4l4-10.2H4l-4 10.2zM24 13.1l3.6-10.2h-5.3L18.7 13h5.3zM13.4 2.9L9.7 13.1h5.4l3.7-10.2h-5.4zm16.8 0l-2 5.3 1.5 4.9h5.1l-4.6-10.2z", color: "#1434CB" },
-        { name: "Mastercard", svg: "M23 12c0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7 7-3.1 7-7zm-14 0c0-3.9-3.1-7-7-7S-5 8.1-5 12s3.1 7 7 7 7-3.1 7-7z", color: "#EB001B" }
-      ]
-    },
-    {
-      icon: Smartphone,
-      title: t("digitalWallets"),
-      description: t("digitalWalletsDesc"),
-      accepted: "Apple Pay, Google Pay, Samsung Pay",
-      logos: []
+      title: "Credit & Debit Cards",
+      description: "Pay securely with your Visa or Mastercard",
+      accepted: "Visa, Mastercard"
     },
     {
       icon: Wallet,
-      title: t("paypal"),
-      description: t("paypalDesc"),
-      accepted: "PayPal, PayPal Credit",
-      logos: []
+      title: "Klarna",
+      description: "Buy now, pay later with flexible payment options",
+      accepted: "Klarna"
     },
     {
-      icon: Landmark,
-      title: t("bankTransfer"),
-      description: t("bankTransferDesc"),
-      accepted: t("allMajorBanks"),
-      logos: []
+      icon: Wallet,
+      title: "Qliro",
+      description: "Fast and secure checkout with Qliro",
+      accepted: "Qliro"
+    },
+    {
+      icon: CreditCard,
+      title: "Stripe",
+      description: "Secure online payment processing",
+      accepted: "Stripe"
     }
   ];
 

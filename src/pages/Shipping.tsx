@@ -59,12 +59,13 @@ const Shipping = () => {
         </div>
 
         <div className="prose prose-slate max-w-3xl">
-          <h2>Shipping Methods</h2>
+          <h2>Shipping Partners</h2>
           <ul>
-            <li><strong>Standard Shipping:</strong> 3-5 business days (Free over $50)</li>
-            <li><strong>Express Shipping:</strong> 1-2 business days ($15.99)</li>
-            <li><strong>Overnight Shipping:</strong> Next business day ($29.99)</li>
-            <li><strong>International Shipping:</strong> 7-14 business days (Varies by location)</li>
+            <li><strong>Postnord:</strong> 2-4 business days</li>
+            <li><strong>Instabox:</strong> 1-2 business days (Express delivery)</li>
+            <li><strong>DHL:</strong> 1-3 business days</li>
+            <li><strong>Bring:</strong> 2-5 business days</li>
+            <li><strong>EarlyBird:</strong> Same-day delivery (Available in select areas)</li>
           </ul>
 
           <h2>Processing Time</h2>

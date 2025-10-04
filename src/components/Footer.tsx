@@ -139,18 +139,14 @@ const Footer = () => {
                 <circle cx="18" cy="16" r="10" fill="#EB001B"/>
                 <circle cx="30" cy="16" r="10" fill="#FF5F00" opacity="0.8"/>
               </svg>
-              <svg className="h-8" viewBox="0 0 48 32" fill="none">
-                <rect width="48" height="32" rx="4" fill="#016FD0"/>
-                <path d="M20 16c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5z" fill="white"/>
-              </svg>
-              <div className="h-8 px-3 bg-white rounded flex items-center justify-center border border-gray-300">
-                <span className="text-[#00457C] font-bold text-xs">PayPal</span>
-              </div>
-              <div className="h-8 px-3 bg-black rounded flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">Apple Pay</span>
+              <div className="h-8 px-3 bg-[#FFB3C7] rounded flex items-center justify-center">
+                <span className="text-[#000000] font-bold text-xs">Klarna</span>
               </div>
               <div className="h-8 px-3 bg-white rounded flex items-center justify-center border border-gray-300">
-                <span className="text-xs font-medium">Google <span className="text-blue-600">Pay</span></span>
+                <span className="text-[#002E5D] font-bold text-xs">Qliro</span>
+              </div>
+              <div className="h-8 px-3 bg-[#635BFF] rounded flex items-center justify-center">
+                <span className="text-white font-bold text-xs">Stripe</span>
               </div>
             </div>
           </div>
@@ -159,17 +155,20 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-3 pb-4">
             <p className="text-xs text-muted-foreground font-medium">Shipping Partners</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="h-6 px-3 flex items-center justify-center bg-white rounded">
-                <span className="text-[#FF6600] font-bold text-sm">FedEx</span>
+              <div className="h-6 px-3 flex items-center justify-center bg-[#FFCC00] rounded">
+                <span className="text-[#004B87] font-bold text-sm">Postnord</span>
               </div>
-              <div className="h-6 px-3 flex items-center justify-center bg-[#FFB500] rounded">
-                <span className="text-[#351C15] font-bold text-sm">UPS</span>
-              </div>
-              <div className="h-6 px-3 flex items-center justify-center bg-white rounded border border-gray-300">
-                <span className="text-[#004B87] font-bold text-sm">USPS</span>
+              <div className="h-6 px-3 flex items-center justify-center bg-[#00D4AA] rounded">
+                <span className="text-white font-bold text-sm">Instabox</span>
               </div>
               <div className="h-6 px-3 flex items-center justify-center bg-white rounded border border-gray-300">
                 <span className="text-red-600 font-bold text-sm">DHL</span>
+              </div>
+              <div className="h-6 px-3 flex items-center justify-center bg-[#00A5DF] rounded">
+                <span className="text-white font-bold text-sm">Bring</span>
+              </div>
+              <div className="h-6 px-3 flex items-center justify-center bg-white rounded border border-gray-300">
+                <span className="text-[#FF6B35] font-bold text-sm">EarlyBird</span>
               </div>
             </div>
           </div>
