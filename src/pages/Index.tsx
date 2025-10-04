@@ -51,12 +51,8 @@ const Index = () => {
       <AnnouncementBanner />
       <Hero />
       {selectedCategory === "all" && !searchQuery && <FeaturedProducts /> }
-      <CategoryFilter 
-        selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-      />
       <div id="products">
-        <ProductGrid 
+        <ProductGrid
           selectedCategory={selectedCategory} 
           searchQuery={searchQuery}
         />
