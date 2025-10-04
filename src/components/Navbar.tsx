@@ -1,8 +1,10 @@
 import { ShoppingCart, Search, Menu, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCart } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
@@ -16,6 +18,7 @@ import {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
+  const { totalItems } = useCart();
   const navigate = useNavigate();
 
   return (
@@ -55,8 +58,13 @@ const Navbar = () => {
               />
             </div>
             
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="relative" onClick={() => navigate("/cart")}>
               <ShoppingCart className="w-5 h-5" />
+              {totalItems > 0 && (
+                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                  {totalItems}
+                </Badge>
+              )}
             </Button>
 
             {user ? (
@@ -69,10 +77,10 @@ const Navbar = () => {
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => navigate("/")}>
+                  <DropdownMenuItem onClick={() => navigate("/orders")}>
                     Orders
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate("/")}>
+                  <DropdownMenuItem onClick={() => navigate("/profile")}>
                     Profile
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />

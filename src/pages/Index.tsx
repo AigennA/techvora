@@ -16,7 +16,9 @@ const Index = () => {
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
       />
-      <ProductGrid selectedCategory={selectedCategory} />
+      <div id="products">
+        <ProductGrid selectedCategory={selectedCategory} />
+      </div>
       <Footer />
     </div>
   );

@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Star, ImageOff } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   id: string;
@@ -14,9 +15,10 @@ interface ProductCardProps {
   inStock: boolean;
 }
 
-const ProductCard = ({ name, price, image, rating, category, inStock }: ProductCardProps) => {
+const ProductCard = ({ id, name, price, image, rating, category, inStock }: ProductCardProps) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
+  const { addToCart } = useCart();
 
   return (
     <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 border-border bg-card">
@@ -83,6 +85,11 @@ const ProductCard = ({ name, price, image, rating, category, inStock }: ProductC
           className="w-full gap-2" 
           disabled={!inStock}
           variant={inStock ? "default" : "secondary"}
+          onClick={() => {
+            if (inStock) {
+              addToCart({ id, name, price, image });
+            }
+          }}
         >
           <ShoppingCart className="w-4 h-4" />
           {inStock ? "Add to Cart" : "Notify Me"}

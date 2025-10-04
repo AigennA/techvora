@@ -3,6 +3,11 @@ import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-tech.jpg";
 
 const Hero = () => {
+  const scrollToProducts = () => {
+    const productsSection = document.querySelector('#products');
+    productsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <div className="container mx-auto px-4 py-20 md:py-32">
@@ -25,11 +30,11 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="group">
+              <Button size="lg" className="group" onClick={scrollToProducts}>
                 Shop Now
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={scrollToProducts}>
                 Browse Categories
               </Button>
             </div>
