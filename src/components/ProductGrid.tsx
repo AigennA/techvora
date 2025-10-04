@@ -19,6 +19,7 @@ const products = [
     rating: 4.8,
     category: "Audio",
     inStock: true,
+    stock: 45,
   },
   {
     id: "2",
@@ -28,6 +29,7 @@ const products = [
     rating: 4.6,
     category: "Phone Accessories",
     inStock: true,
+    stock: 120,
   },
   {
     id: "3",
@@ -37,6 +39,7 @@ const products = [
     rating: 4.7,
     category: "Charging",
     inStock: true,
+    stock: 78,
   },
   {
     id: "4",
@@ -46,6 +49,7 @@ const products = [
     rating: 4.9,
     category: "Smart Devices",
     inStock: false,
+    stock: 0,
   },
   {
     id: "5",
@@ -55,6 +59,7 @@ const products = [
     rating: 4.9,
     category: "Audio",
     inStock: true,
+    stock: 32,
   },
   {
     id: "6",
@@ -64,6 +69,7 @@ const products = [
     rating: 4.5,
     category: "Phone Accessories",
     inStock: true,
+    stock: 95,
   },
   {
     id: "7",
@@ -73,6 +79,7 @@ const products = [
     rating: 4.8,
     category: "Charging",
     inStock: true,
+    stock: 64,
   },
   {
     id: "8",
@@ -82,6 +89,7 @@ const products = [
     rating: 4.6,
     category: "Smart Devices",
     inStock: true,
+    stock: 28,
   },
 ];
 

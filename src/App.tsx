@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import Favorites from "./pages/Favorites";
+import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import Shipping from "./pages/Shipping";
 import Returns from "./pages/Returns";
@@ -35,20 +36,21 @@ const App = () => (
             <CartProvider>
               <FavoritesProvider>
                 <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/auth" element={<Auth />} />
-                  <Route path="/cart" element={<Cart />} />
-                  <Route path="/checkout" element={<Checkout />} />
-                  <Route path="/orders" element={<Orders />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/favorites" element={<Favorites />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/shipping" element={<Shipping />} />
-                  <Route path="/returns" element={<Returns />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/returns" element={<Returns />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="*" element={<NotFound />} />
                 </Routes>
               </FavoritesProvider>
             </CartProvider>

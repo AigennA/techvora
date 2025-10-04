@@ -55,6 +55,33 @@ const translations: Translations = {
     returns: "Returns",
     faq: "FAQ",
     allRightsReserved: "All rights reserved.",
+    
+    // Product names
+    "product_1_name": "Premium Wireless Earbuds Pro",
+    "product_2_name": "Ultra-Slim Phone Case",
+    "product_3_name": "Fast Wireless Charging Pad",
+    "product_4_name": "Smart Fitness Watch",
+    "product_5_name": "Noise-Cancelling Headphones",
+    "product_6_name": "Magnetic Car Mount",
+    "product_7_name": "65W GaN Fast Charger",
+    "product_8_name": "Smart Home Hub",
+    
+    // Product descriptions
+    "product_1_desc": "Experience premium sound quality with active noise cancellation, 30-hour battery life, and crystal-clear calls. Perfect for music lovers and professionals.",
+    "product_2_desc": "Military-grade protection in a sleek design. Ultra-thin profile with raised edges to protect your screen and camera.",
+    "product_3_desc": "Charge your devices wirelessly at lightning speed. Compatible with all Qi-enabled devices. Includes smart LED indicator.",
+    "product_4_desc": "Track your fitness goals with advanced health monitoring. Heart rate, sleep tracking, GPS, and 7-day battery life.",
+    "product_5_desc": "Industry-leading noise cancellation with premium sound quality. 40-hour battery, multipoint connectivity, and comfortable all-day wear.",
+    "product_6_desc": "Strong magnetic hold keeps your phone secure. 360° rotation and one-hand operation. Universal compatibility.",
+    "product_7_desc": "Ultra-fast charging with GaN technology. Charge laptops, tablets, and phones simultaneously. Compact and travel-friendly.",
+    "product_8_desc": "Control your entire smart home from one hub. Compatible with Alexa, Google Home, and HomeKit. Easy setup and automation.",
+    
+    // Product detail
+    viewDetails: "View Details",
+    stockAvailable: "In Stock",
+    itemsLeft: "items left",
+    inYourCart: "in your cart",
+    description: "Description",
   },
   sv: {
     // Navbar
@@ -102,6 +129,33 @@ const translations: Translations = {
     returns: "Returer",
     faq: "FAQ",
     allRightsReserved: "Alla rättigheter förbehållna.",
+    
+    // Product names
+    "product_1_name": "Premium Trådlösa Öronsnäckor Pro",
+    "product_2_name": "Ultrasmal Telefonfodral",
+    "product_3_name": "Snabb Trådlös Laddplatta",
+    "product_4_name": "Smart Fitnessklocka",
+    "product_5_name": "Brusreducerande Hörlurar",
+    "product_6_name": "Magnetisk Bilhållare",
+    "product_7_name": "65W GaN Snabbladdare",
+    "product_8_name": "Smart Hem Hub",
+    
+    // Product descriptions
+    "product_1_desc": "Upplev premiumljudkvalitet med aktiv brusreducering, 30 timmars batteritid och kristallklara samtal. Perfekt för musikälskare och yrkesverksamma.",
+    "product_2_desc": "Militärt skydd i en snygg design. Ultratunt profil med upphöjda kanter för att skydda skärm och kamera.",
+    "product_3_desc": "Ladda dina enheter trådlöst i blixtfart. Kompatibel med alla Qi-aktiverade enheter. Inkluderar smart LED-indikator.",
+    "product_4_desc": "Spåra dina träningsmål med avancerad hälsoövervakning. Puls, sömnspårning, GPS och 7 dagars batteritid.",
+    "product_5_desc": "Branschledande brusreducering med premium ljudkvalitet. 40 timmars batteri, multipunktanslutning och bekväm heldagsanvändning.",
+    "product_6_desc": "Starkt magnetiskt grepp håller telefonen säker. 360° rotation och enhandsanvändning. Universell kompatibilitet.",
+    "product_7_desc": "Ultras snabbladdning med GaN-teknik. Ladda bärbara datorer, surfplattor och telefoner samtidigt. Kompakt och resvänlig.",
+    "product_8_desc": "Styr hela ditt smarta hem från en hub. Kompatibel med Alexa, Google Home och HomeKit. Enkel installation och automatisering.",
+    
+    // Product detail
+    viewDetails: "Visa Detaljer",
+    stockAvailable: "I Lager",
+    itemsLeft: "kvar",
+    inYourCart: "i din varukorg",
+    description: "Beskrivning",
   },
   zh: {
     // Navbar
@@ -149,6 +203,33 @@ const translations: Translations = {
     returns: "退货",
     faq: "常见问题",
     allRightsReserved: "保留所有权利。",
+    
+    // Product names
+    "product_1_name": "高级无线耳机 Pro",
+    "product_2_name": "超薄手机壳",
+    "product_3_name": "快速无线充电板",
+    "product_4_name": "智能健身手表",
+    "product_5_name": "降噪耳机",
+    "product_6_name": "磁性车载支架",
+    "product_7_name": "65W 氮化镓快充",
+    "product_8_name": "智能家居中枢",
+    
+    // Product descriptions
+    "product_1_desc": "体验高级音质，配备主动降噪、30小时电池续航和清晰通话。音乐爱好者和专业人士的完美选择。",
+    "product_2_desc": "军用级防护，时尚设计。超薄外形，边缘凸起保护屏幕和相机。",
+    "product_3_desc": "闪电般快速无线充电。兼容所有 Qi 标准设备。配备智能 LED 指示灯。",
+    "product_4_desc": "通过先进的健康监测追踪您的健身目标。心率、睡眠追踪、GPS 和 7 天电池续航。",
+    "product_5_desc": "行业领先的降噪技术和高级音质。40小时电池、多点连接和全天舒适佩戴。",
+    "product_6_desc": "强大磁力牢固固定手机。360° 旋转和单手操作。通用兼容性。",
+    "product_7_desc": "氮化镓技术超快充电。同时为笔记本电脑、平板电脑和手机充电。小巧便携。",
+    "product_8_desc": "从一个中枢控制整个智能家居。兼容 Alexa、Google Home 和 HomeKit。简易设置和自动化。",
+    
+    // Product detail
+    viewDetails: "查看详情",
+    stockAvailable: "有货",
+    itemsLeft: "件库存",
+    inYourCart: "在购物车",
+    description: "描述",
   },
 };
 
