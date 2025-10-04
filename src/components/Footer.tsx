@@ -36,24 +36,24 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">{t("quickLinks")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/?category=accessories" className="text-muted-foreground hover:text-primary transition-colors">
                   {t("phoneAccessories")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/?category=audio" className="text-muted-foreground hover:text-primary transition-colors">
                   {t("audio")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/?category=charging" className="text-muted-foreground hover:text-primary transition-colors">
                   {t("charging")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/?category=smart-devices" className="text-muted-foreground hover:text-primary transition-colors">
                   {t("smartDevices")}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -176,6 +176,7 @@ const Footer = () => {
 
           <div className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} {t("techStore")}. {t("allRightsReserved")}</p>
+            <p className="text-xs mt-2 opacity-70">Hosted on Lovable.app</p>
           </div>
         </div>
       </div>

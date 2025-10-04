@@ -18,6 +18,7 @@ const Checkout = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [deliveryMethod, setDeliveryMethod] = useState("standard");
   const [formData, setFormData] = useState({
     fullName: "",
     email: user?.email || "",
@@ -28,6 +29,15 @@ const Checkout = () => {
     postalCode: "",
     country: "United States",
   });
+
+  const deliveryOptions = [
+    { id: "standard", name: "Standard Shipping", time: "3-5 business days", price: 0 },
+    { id: "express", name: "Express Shipping", time: "1-2 business days", price: 15.99 },
+    { id: "overnight", name: "Overnight Shipping", time: "Next business day", price: 29.99 },
+  ];
+
+  const selectedDelivery = deliveryOptions.find(opt => opt.id === deliveryMethod) || deliveryOptions[0];
+  const finalTotal = totalPrice + selectedDelivery.price;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +60,7 @@ const Checkout = () => {
         .from("orders")
         .insert({
           user_id: user.id,
-          total_amount: totalPrice,
+          total_amount: finalTotal,
           status: "pending",
         })
         .select()
@@ -239,7 +249,45 @@ const Checkout = () => {
                     </div>
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                  <Card className="mt-6">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Delivery Method</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      {deliveryOptions.map((option) => (
+                        <div
+                          key={option.id}
+                          className={`border rounded-lg p-4 cursor-pointer transition-colors ${
+                            deliveryMethod === option.id
+                              ? "border-primary bg-primary/5"
+                              : "border-border hover:border-primary/50"
+                          }`}
+                          onClick={() => setDeliveryMethod(option.id)}
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <input
+                                type="radio"
+                                name="delivery"
+                                checked={deliveryMethod === option.id}
+                                onChange={() => setDeliveryMethod(option.id)}
+                                className="w-4 h-4"
+                              />
+                              <div>
+                                <p className="font-semibold">{option.name}</p>
+                                <p className="text-sm text-muted-foreground">{option.time}</p>
+                              </div>
+                            </div>
+                            <p className="font-bold">
+                              {option.price === 0 ? "Free" : `$${option.price.toFixed(2)}`}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+
+                  <Button type="submit" className="w-full mt-6" size="lg" disabled={loading}>
                     {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     Place Order
                   </Button>
@@ -270,12 +318,12 @@ const Checkout = () => {
                     <span>${totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Shipping</span>
-                    <span>Free</span>
+                    <span className="text-muted-foreground">Shipping ({selectedDelivery.name})</span>
+                    <span>{selectedDelivery.price === 0 ? "Free" : `$${selectedDelivery.price.toFixed(2)}`}</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg">
                     <span>Total</span>
-                    <span className="text-primary">${totalPrice.toFixed(2)}</span>
+                    <span className="text-primary">${finalTotal.toFixed(2)}</span>
                   </div>
                 </div>
               </CardContent>

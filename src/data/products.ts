@@ -1,0 +1,182 @@
+import productEarbuds from "@/assets/product-earbuds.jpg";
+import productPhoneCase from "@/assets/product-phone-case.jpg";
+import productChargerPad from "@/assets/product-charger-pad.jpg";
+import productSmartwatch from "@/assets/product-smartwatch.jpg";
+import productHeadphones from "@/assets/product-headphones.jpg";
+import productCarMount from "@/assets/product-car-mount.jpg";
+import productFastCharger from "@/assets/product-fast-charger.jpg";
+import productSmartHub from "@/assets/product-smart-hub.jpg";
+
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  rating: number;
+  category: string;
+  inStock: boolean;
+  stock: number;
+}
+
+export const products: Product[] = [
+  {
+    id: "1",
+    name: "Premium Wireless Earbuds Pro",
+    price: 149.99,
+    image: productEarbuds,
+    rating: 4.8,
+    category: "Audio",
+    inStock: true,
+    stock: 45,
+  },
+  {
+    id: "2",
+    name: "Ultra-Slim Phone Case",
+    price: 29.99,
+    image: productPhoneCase,
+    rating: 4.6,
+    category: "Phone Accessories",
+    inStock: true,
+    stock: 120,
+  },
+  {
+    id: "3",
+    name: "Fast Wireless Charging Pad",
+    price: 49.99,
+    image: productChargerPad,
+    rating: 4.7,
+    category: "Charging",
+    inStock: true,
+    stock: 78,
+  },
+  {
+    id: "4",
+    name: "Smart Fitness Watch",
+    price: 299.99,
+    image: productSmartwatch,
+    rating: 4.9,
+    category: "Smart Devices",
+    inStock: false,
+    stock: 0,
+  },
+  {
+    id: "5",
+    name: "Noise-Cancelling Headphones",
+    price: 349.99,
+    image: productHeadphones,
+    rating: 4.9,
+    category: "Audio",
+    inStock: true,
+    stock: 32,
+  },
+  {
+    id: "6",
+    name: "Magnetic Car Mount",
+    price: 24.99,
+    image: productCarMount,
+    rating: 4.5,
+    category: "Phone Accessories",
+    inStock: true,
+    stock: 95,
+  },
+  {
+    id: "7",
+    name: "65W GaN Fast Charger",
+    price: 59.99,
+    image: productFastCharger,
+    rating: 4.8,
+    category: "Charging",
+    inStock: true,
+    stock: 64,
+  },
+  {
+    id: "8",
+    name: "Smart Home Hub",
+    price: 129.99,
+    image: productSmartHub,
+    rating: 4.6,
+    category: "Smart Devices",
+    inStock: true,
+    stock: 28,
+  },
+  {
+    id: "9",
+    name: "Bluetooth Speaker Pro",
+    price: 89.99,
+    image: productHeadphones,
+    rating: 4.7,
+    category: "Audio",
+    inStock: true,
+    stock: 55,
+  },
+  {
+    id: "10",
+    name: "Screen Protector Kit",
+    price: 19.99,
+    image: productPhoneCase,
+    rating: 4.4,
+    category: "Phone Accessories",
+    inStock: true,
+    stock: 150,
+  },
+  {
+    id: "11",
+    name: "Portable Power Bank 20000mAh",
+    price: 39.99,
+    image: productChargerPad,
+    rating: 4.6,
+    category: "Charging",
+    inStock: true,
+    stock: 88,
+  },
+  {
+    id: "12",
+    name: "Smart Light Bulbs (4-Pack)",
+    price: 49.99,
+    image: productSmartHub,
+    rating: 4.5,
+    category: "Smart Devices",
+    inStock: true,
+    stock: 42,
+  },
+  {
+    id: "13",
+    name: "Gaming Headset RGB",
+    price: 129.99,
+    image: productHeadphones,
+    rating: 4.8,
+    category: "Audio",
+    inStock: true,
+    stock: 38,
+  },
+  {
+    id: "14",
+    name: "Phone Ring Holder",
+    price: 12.99,
+    image: productCarMount,
+    rating: 4.3,
+    category: "Phone Accessories",
+    inStock: true,
+    stock: 200,
+  },
+  {
+    id: "15",
+    name: "USB-C Cable 3-Pack",
+    price: 24.99,
+    image: productFastCharger,
+    rating: 4.7,
+    category: "Charging",
+    inStock: true,
+    stock: 175,
+  },
+  {
+    id: "16",
+    name: "Smart Door Lock",
+    price: 199.99,
+    image: productSmartHub,
+    rating: 4.6,
+    category: "Smart Devices",
+    inStock: true,
+    stock: 25,
+  },
+];
