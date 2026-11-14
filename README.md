@@ -1,4 +1,25 @@
-# Welcome to your Lovable project
+# ⚡ TechVora
+
+Premium tech accessories and smart devices online store: phone accessories, audio, charging and smart devices.
+
+🌐 **Live site:** https://techvora.lovable.app
+
+## 📸 Screenshots
+
+| Home | Menu | Product | Cart |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/home.png" width="200" alt="Home page" /> | <img src="docs/screenshots/menu.png" width="200" alt="Mobile menu" /> | <img src="docs/screenshots/product.png" width="200" alt="Product page" /> | <img src="docs/screenshots/cart.png" width="200" alt="Cart" /> |
+
+## ✨ Features
+
+- Product catalog with categories, discounts and ratings
+- Live product search with image suggestions
+- Shopping cart, checkout and favorites
+- Sign in / accounts (Supabase)
+- 6 languages: English, Svenska, 中文, Polski, Türkçe, Español
+- Mobile-friendly design
+
+---
 
 ## Project info
 
