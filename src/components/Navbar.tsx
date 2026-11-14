@@ -8,6 +8,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "@/components/Logo";
 import SearchBar from "@/components/SearchBar";
+import categoryAccessories from "@/assets/product-phone-case.jpg";
+import categoryAudio from "@/assets/product-earbuds.jpg";
+import categoryCharging from "@/assets/product-charger-pad.jpg";
+import categorySmartDevices from "@/assets/product-smartwatch.jpg";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +20,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+const mobileCategories = [
+  { id: "accessories", labelKey: "phoneAccessories", image: categoryAccessories },
+  { id: "audio", labelKey: "audio", image: categoryAudio },
+  { id: "charging", labelKey: "charging", image: categoryCharging },
+  { id: "smart-devices", labelKey: "smartDevices", image: categorySmartDevices },
+] as const;
 
 interface NavbarProps {
   onSearch?: (query: string) => void;
@@ -265,30 +276,27 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
 
               <div className="h-px bg-border" />
 
-              <button 
-                onClick={() => handleCategoryClick("accessories")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("phoneAccessories")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("audio")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("audio")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("charging")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("charging")}
-              </button>
-              <button 
-                onClick={() => handleCategoryClick("smart-devices")} 
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2 text-left"
-              >
-                {t("smartDevices")}
-              </button>
+              <div className="grid grid-cols-2 gap-3">
+                {mobileCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategoryClick(cat.id)}
+                    className="group relative overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all hover:shadow-md hover:border-primary active:scale-[0.98]"
+                  >
+                    <div className="aspect-[3/2] w-full overflow-hidden bg-muted">
+                      <img
+                        src={cat.image}
+                        alt={t(cat.labelKey)}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <span className="block px-3 py-2 text-sm font-semibold text-foreground group-hover:text-primary">
+                      {t(cat.labelKey)}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
