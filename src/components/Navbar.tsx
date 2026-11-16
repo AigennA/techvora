@@ -151,7 +151,7 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hidden sm:flex">
+                  <Button variant="ghost" size="icon" aria-label={t("myAccount")}>
                     <User className="w-5 h-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -176,9 +176,14 @@ const Navbar = ({ onSearch, onCategoryChange }: NavbarProps = {}) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button onClick={() => navigate("/auth")} size="sm" className="hidden sm:flex">
-                {t("signIn")}
-              </Button>
+              <>
+                <Button onClick={() => navigate("/auth")} size="sm" className="hidden sm:flex">
+                  {t("signIn")}
+                </Button>
+                <Button variant="ghost" size="icon" className="sm:hidden" aria-label={t("signIn")} onClick={() => navigate("/auth")}>
+                  <User className="w-5 h-5" />
+                </Button>
+              </>
             )}
 
             <Button 
